@@ -1,0 +1,708 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#07080c">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Subash Chandra Bose · DevOps, Cloud & Security Engineer">
+<meta property="og:description" content="DevOps, Cloud Support and Security Engineer. AWS, Azure, Terraform, Kubernetes, Jenkins, Splunk, Wazuh. Microsoft Certified AZ-104, SC-500, SC-200. Open to roles anywhere.">
+<meta property="og:url" content="https://subash-1507.github.io/">
+<link rel="canonical" href="https://subash-1507.github.io/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Crect width=%2264%22 height=%2264%22 rx=%2214%22 fill=%22%2307080c%22/%3E%3Ctext x=%2232%22 y=%2241%22 font-family=%22monospace%22 font-size=%2222%22 font-weight=%22700%22 fill=%22%238f9eff%22 text-anchor=%22middle%22%3ESCB%3C/text%3E%3C/svg%3E">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Subash Chandra Bose</title>
+<meta name="description" content="Subash Chandra Bose: DevOps Engineer, Cloud Support Engineer and Security Engineer. Open to roles anywhere. AWS, Azure, Terraform, Kubernetes, Jenkins, CI/CD, Splunk, Wazuh, SIEM. Microsoft Certified AZ-104, SC-500, SC-200.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@1&display=swap">
+<style>
+/* Layout: dark single-theme. 3D cluster hero over a perspective grid, then a bento of results, a filterable project grid with tilt cards, and quiet lists for the rest. */
+:root{
+  color-scheme:dark;
+  --bg:#07080c; --surface:#0e1016; --surface-2:#141721; --ink:#eef0f6; --muted:#868c9f; --faint:#4a4f60;
+  --line:rgba(255,255,255,.075); --line-2:rgba(255,255,255,.14);
+  --accent:#8f9eff; --accent-glow:rgba(143,158,255,.16); --live:#5fd6c4;
+  --sans:"Geist",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --serif:"Instrument Serif",Georgia,"Times New Roman",serif;
+  --mono:"Geist Mono",ui-monospace,"Cascadia Mono",Consolas,monospace;
+  --r:18px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:8px}
+h1,h2,h3,p{margin:0}
+h1,h2,h3{text-wrap:balance;font-weight:600;letter-spacing:-.035em}
+.wrap{max-width:1160px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.mono{font-family:var(--mono)}
+.label{font:500 12px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+em.s{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.01em;color:var(--accent)}
+
+/* Nav */
+.nav{position:fixed;left:0;right:0;top:calc(env(safe-area-inset-top,0px) + 14px);z-index:20;display:flex;justify-content:center;padding-left:max(14px,env(safe-area-inset-left,0px));padding-right:max(14px,env(safe-area-inset-right,0px));pointer-events:none}
+.nav-in{pointer-events:auto;display:flex;align-items:center;gap:4px;padding:6px;border:1px solid var(--line-2);border-radius:999px;background:rgba(14,16,22,.66);backdrop-filter:blur(16px) saturate(140%);-webkit-backdrop-filter:blur(16px) saturate(140%);max-width:100%}
+.mark{font:600 13px/1 var(--mono);letter-spacing:.06em;padding:9px 12px;color:var(--ink)}
+.nav a.l{font-size:14px;color:var(--muted);padding:8px 12px;border-radius:999px;transition:color .2s,background .2s}
+.nav a.l:hover{color:var(--ink);background:var(--surface-2)}
+.pill-btn{font:500 13.5px/1 var(--sans);border:0;cursor:pointer;color:var(--bg);background:var(--ink);padding:10px 14px;border-radius:999px;white-space:nowrap}
+.pill-btn:hover{background:var(--accent)}
+
+/* Hero */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:16px;align-items:center;padding-block:132px 72px}
+.glow{position:absolute;inset:auto;right:-10%;top:-20%;width:70vw;height:70vw;max-width:900px;max-height:900px;background:radial-gradient(closest-side,var(--accent-glow),transparent 70%);z-index:0;pointer-events:none}
+.floor{position:absolute;left:-50%;right:-50%;bottom:-2px;height:58%;z-index:1;pointer-events:none;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:64px 64px;transform:perspective(520px) rotateX(64deg);transform-origin:50% 100%;
+  -webkit-mask-image:linear-gradient(to top,#000 10%,transparent 85%);mask-image:linear-gradient(to top,#000 10%,transparent 85%)}
+.intro{display:grid;gap:26px;min-width:0}
+.status{display:inline-flex;align-items:center;gap:10px;font:500 13px/1.3 var(--mono);color:var(--ink);border:1px solid var(--line-2);background:rgba(14,16,22,.6);padding:8px 14px 8px 12px;border-radius:999px;width:max-content;max-width:100%}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--live);box-shadow:0 0 0 0 var(--live);animation:ping 2.4s ease-out infinite;flex-shrink:0}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(95,214,196,.55)}70%,100%{box-shadow:0 0 0 9px rgba(95,214,196,0)}}
+.hero h1{width:max-content;max-width:100%;font-size:clamp(2.1rem,4.4vw,3.4rem);line-height:1.05;letter-spacing:-.035em;font-weight:300;cursor:default;
+  background:radial-gradient(150px circle at var(--gx,50%) var(--gy,50%),rgba(205,214,255,var(--ga,0)),transparent 72%),linear-gradient(180deg,var(--ink) 30%,var(--muted));
+  -webkit-background-clip:text;background-clip:text;color:transparent;transition:filter .45s ease}
+.hero h1:hover{filter:drop-shadow(0 0 10px rgba(143,158,255,.55)) drop-shadow(0 0 26px rgba(143,158,255,.3))}
+.tagline{font-size:clamp(1.15rem,2.1vw,1.45rem);line-height:1.4;color:var(--muted);max-width:30ch;letter-spacing:-.015em}
+.tagline b{color:var(--ink);font-weight:500}
+.roles{display:flex;flex-wrap:wrap;gap:8px}
+.roles span{font:500 12.5px/1 var(--mono);padding:8px 11px;border-radius:999px;background:var(--surface-2);border:1px solid var(--line);color:var(--ink)}
+.cta{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.ghost{font:500 14px/1 var(--sans);color:var(--ink);padding:12px 16px;border-radius:999px;border:1px solid var(--line-2);background:transparent;cursor:pointer}
+.ghost:hover{border-color:var(--accent);color:var(--accent)}
+.solid{font:500 14px/1 var(--sans);color:var(--bg);padding:13px 18px;border-radius:999px;background:var(--ink);border:0;cursor:pointer}
+.solid:hover{background:var(--accent)}
+.stage3d{position:relative;height:min(560px,52vw);min-height:340px}
+#scene{position:absolute;inset:0;width:100%;height:100%;display:block}
+.fallback{position:absolute;inset:18%;border-radius:50%;background:radial-gradient(circle at 35% 30%,var(--surface-2),var(--bg) 70%);border:1px solid var(--line-2);box-shadow:0 0 120px var(--accent-glow)}
+.tip{position:absolute;transform:translate(-50%,calc(-100% - 22px));font:500 12.5px/1 var(--mono);color:var(--ink);background:var(--surface-2);border:1px solid var(--line-2);padding:7px 10px;border-radius:999px;pointer-events:none;white-space:nowrap}
+
+/* Sections */
+section{padding-block:112px 0}
+.sh{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:16px 32px;margin-bottom:36px}
+.sh-l{display:grid;gap:14px}
+.sh h2{font-size:clamp(2rem,4.4vw,3.2rem);line-height:1.02}
+.sh p.side{color:var(--muted);max-width:42ch;font-size:15px}
+
+/* Bento */
+.bento{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:14px}
+.tile{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:26px;display:grid;gap:14px;align-content:space-between;min-height:200px;overflow:hidden;min-width:0}
+.tile.s2{grid-column:span 2}.tile.s3{grid-column:span 3}
+.big{font-size:clamp(2.8rem,5.4vw,4.2rem);font-weight:500;letter-spacing:-.06em;line-height:.9;font-variant-numeric:tabular-nums}
+.big sup{font-size:.42em;letter-spacing:-.02em;color:var(--muted);vertical-align:.95em;margin-left:2px}
+.tile p{color:var(--muted);font-size:15px;max-width:34ch}
+.tile p b{color:var(--ink);font-weight:500}
+.bar{height:4px;border-radius:4px;background:var(--surface-2);overflow:hidden}
+.bar i{display:block;height:100%;border-radius:4px;background:linear-gradient(90deg,var(--accent),var(--live))}
+.codes{display:flex;flex-wrap:wrap;gap:8px}
+.codes .flip{display:block;width:98px;height:40px;perspective:600px;transition:opacity .25s;outline:none;cursor:pointer;color:var(--ink)}
+.codes .flip.dim{opacity:.3}
+.codes .fi{position:relative;display:block;width:100%;height:100%;transform-style:preserve-3d;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.codes .flip:hover .fi,.codes .flip:focus-visible .fi{transform:rotateY(180deg)}
+.codes .ff,.codes .fb{position:absolute;inset:0;display:grid;place-items:center;border-radius:10px;border:1px solid var(--line);background:var(--surface-2);-webkit-backface-visibility:hidden;backface-visibility:hidden;transition:box-shadow .45s,border-color .45s,color .45s}
+.codes .ff{font:500 14px/1 var(--mono)}
+.codes .fb{transform:rotateY(180deg);font:600 10.5px/1 var(--mono);letter-spacing:.05em;text-transform:uppercase;color:var(--accent)}
+.codes .fb.fun{color:var(--live)}
+.codes .flip:hover .fb,.codes .flip:focus-visible .fb{color:#fff;border-color:rgba(143,158,255,.65);box-shadow:0 0 0 1px rgba(143,158,255,.25),0 0 20px rgba(143,158,255,.5),inset 0 0 14px rgba(143,158,255,.2)}
+.codes .flip:hover .fb.fun,.codes .flip:focus-visible .fb.fun{border-color:rgba(95,214,196,.65);box-shadow:0 0 0 1px rgba(95,214,196,.25),0 0 20px rgba(95,214,196,.5),inset 0 0 14px rgba(95,214,196,.2)}
+.badge3d{position:absolute;right:24px;top:16px;width:116px;aspect-ratio:200/210;perspective:700px}
+.badge3d::after{content:"";position:absolute;left:14%;right:14%;bottom:-12px;height:12px;border-radius:50%;background:radial-gradient(closest-side,rgba(143,158,255,.35),transparent);filter:blur(2px)}
+.badge3d .b{position:relative;width:100%;height:100%;transform-style:preserve-3d;animation:sway 7s ease-in-out infinite}
+.badge3d .l{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.badge3d .e{color:#0d1f40;fill:currentColor}
+.badge3d .e:nth-child(odd){color:#122852}
+.badge3d .f{transform:translateZ(.5px);filter:drop-shadow(0 10px 16px rgba(0,0,0,.5))}
+.badge3d .s{transform:translateZ(1px);pointer-events:none}
+.badge3d .sweep{animation:sweep 7s ease-in-out infinite}
+@keyframes sway{0%,100%{transform:rotateY(-30deg) rotateX(8deg)}50%{transform:rotateY(30deg) rotateX(-6deg)}}
+@keyframes sweep{0%,100%{transform:translateX(0)}50%{transform:translateX(340px)}}
+.certs .label,.certs .codes{padding-right:134px}
+
+/* Lens */
+.lens{display:inline-flex;flex-wrap:wrap;gap:4px;padding:5px;border-radius:999px;border:1px solid var(--line-2);background:var(--surface)}
+.lens button{font:500 14px/1 var(--sans);color:var(--muted);background:transparent;border:0;padding:10px 15px;border-radius:999px;cursor:pointer;transition:color .2s,background .2s}
+.lens button:hover{color:var(--ink)}
+.lens button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.count{font:500 13px/1 var(--mono);color:var(--muted);margin-top:14px}
+
+/* Projects */
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.card{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:28px;display:grid;gap:18px;align-content:start;min-width:0;transition:transform .35s cubic-bezier(.2,.7,.2,1),border-color .3s;transform-style:preserve-3d;will-change:transform}
+.card::before{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(420px circle at var(--mx,50%) var(--my,0%),var(--accent-glow),transparent 60%);opacity:0;transition:opacity .3s;pointer-events:none}
+.card:hover{border-color:var(--line-2)}
+.card:hover::before{opacity:1}
+.card-top{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.idx{font:500 12px/1 var(--mono);color:var(--faint)}
+.rtags{display:flex;gap:6px}
+.rtags span{font:500 11px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:5px 8px;border-radius:999px;border:1px solid var(--line)}
+.card h3{font-size:1.45rem;line-height:1.15}
+.card p{color:var(--muted);font-size:15.5px}
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:6px;font:500 12px/1 var(--mono);color:var(--ink)}
+.flow span{padding:7px 9px;border-radius:8px;background:var(--surface-2);border:1px solid var(--line)}
+.flow em{font-style:normal;color:var(--accent)}
+.stack{display:flex;flex-wrap:wrap;gap:6px}
+.stack span{font:400 12.5px/1 var(--mono);color:var(--muted);padding:6px 9px;border-radius:999px;background:var(--surface-2)}
+.repo{display:inline-flex;align-items:center;gap:8px;font:500 13px/1.3 var(--mono);color:var(--ink);word-break:break-all;width:max-content;max-width:100%}
+.repo:hover{color:var(--accent)}
+.repo svg{flex-shrink:0;transition:transform .2s}
+.repo:hover svg{transform:translate(2px,-2px)}
+
+/* Experience */
+.xp{display:grid;border-top:1px solid var(--line)}
+.job{display:grid;grid-template-columns:220px minmax(0,1fr);gap:10px 40px;padding-block:34px;border-bottom:1px solid var(--line)}
+.when{font:500 13px/1.6 var(--mono);color:var(--muted)}
+.job h3{font-size:1.4rem}
+.org{color:var(--muted);margin-top:4px}
+.job ul{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:10px;max-width:70ch}
+.job li{position:relative;padding-left:22px;color:#c7cbd8}
+.job li::before{content:"";position:absolute;left:0;top:.72em;width:10px;height:1px;background:var(--accent)}
+
+/* Skills */
+.skills{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.sk{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:24px;display:grid;gap:14px;align-content:start;transition:opacity .3s;min-width:0}
+.sk.dim{opacity:.32}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips span{font-size:14px;padding:6px 11px;border-radius:999px;border:1px solid var(--line);color:#d5d8e2}
+
+/* Education */
+.edu{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.edu .tile{min-height:0}
+.edu h3{font-size:1.3rem}
+
+/* Contact */
+.contact{margin-top:112px;border-top:1px solid var(--line);position:relative;overflow:hidden}
+.contact .wrap{padding-block:96px 64px;display:grid;gap:28px;position:relative;z-index:1}
+.contact h2{font-size:clamp(2.4rem,6vw,4.6rem);line-height:1;letter-spacing:-.05em;max-width:16ch}
+.email{font:500 clamp(1.05rem,2.6vw,1.6rem)/1.2 var(--mono);user-select:all;word-break:break-all}
+.links{display:flex;flex-wrap:wrap;gap:8px}
+.links a,.links span{font-size:14.5px;padding:10px 15px;border-radius:999px;border:1px solid var(--line-2);color:var(--ink)}
+.links a:hover{border-color:var(--accent);color:var(--accent)}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;color:var(--faint);font:400 12.5px/1.5 var(--mono);padding-top:28px;border-top:1px solid var(--line)}
+
+@media (max-width:900px){
+  .hero .wrap{grid-template-columns:minmax(0,1fr);padding-block:112px 48px;gap:8px}
+  .stage3d{order:-1;height:360px;min-height:0;margin-inline:-20px}
+  .bento{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .tile.s2{grid-column:span 1}.tile.s3{grid-column:span 2}
+  .tile.s2:first-child{grid-column:span 2}
+  .grid,.skills,.edu{grid-template-columns:minmax(0,1fr)}
+  .job{grid-template-columns:minmax(0,1fr)}
+  .nav a.l{display:none}
+}
+@media (max-width:520px){
+  section{padding-block:80px 0}
+  .badge3d{width:76px;right:18px;top:16px}
+  .certs .label,.certs .codes{padding-right:84px}
+  .bento{grid-template-columns:minmax(0,1fr)}
+  .tile.s2,.tile.s3,.tile.s2:first-child{grid-column:auto}
+  .tile{min-height:0;padding:22px}
+  .card{padding:22px}
+  .lens button{padding:9px 11px;font-size:13.5px}
+  .stage3d{height:290px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .dot,.badge3d .b,.badge3d .sweep{animation:none}
+  .codes .fi{transition:none}
+  .badge3d .b{transform:rotateY(-20deg) rotateX(6deg)}
+  .card,.sk,.codes span{transition:none}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+<linearGradient id="mb-navy" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#31589a"/><stop offset="1" stop-color="#132a55"/></linearGradient>
+<linearGradient id="mb-grey" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#666a72"/><stop offset="1" stop-color="#46494f"/></linearGradient>
+<linearGradient id="mb-blue" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a8fe8"/><stop offset="1" stop-color="#0a54aa"/></linearGradient>
+<linearGradient id="mb-gloss" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".32"/><stop offset=".42" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<linearGradient id="mb-rib" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#e9ecf1"/></linearGradient>
+<linearGradient id="mb-shine" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<clipPath id="mb-in"><path d="M100 15 C123 24 150 27 169 29 L169 117 C169 154 135 178 100 194 C65 178 31 154 31 117 L31 29 C50 27 77 24 100 15 Z"/></clipPath>
+<clipPath id="mb-sil"><path d="M100 5 C126 15 156 18 179 20 L179 117 C179 160 142 187 100 205 C58 187 21 160 21 117 L21 20 C44 18 74 15 100 5 Z"/><path d="M9 79 Q100 63 191 79 L191 109 Q100 93 9 109 Z"/></clipPath>
+<symbol id="msb" viewBox="0 0 200 210">
+<path d="M17 95 L3 106 L15 117 L26 108 Z" fill="#2c2e33" stroke="#1a1b1f" stroke-width="2" stroke-linejoin="round"/>
+<path d="M183 95 L197 106 L185 117 L174 108 Z" fill="#2c2e33" stroke="#1a1b1f" stroke-width="2" stroke-linejoin="round"/>
+<path d="M100 5 C126 15 156 18 179 20 L179 117 C179 160 142 187 100 205 C58 187 21 160 21 117 L21 20 C44 18 74 15 100 5 Z" fill="url(#mb-navy)"/>
+<g clip-path="url(#mb-in)"><rect x="0" y="0" width="200" height="100" fill="url(#mb-grey)"/><rect x="0" y="100" width="200" height="110" fill="url(#mb-blue)"/></g>
+<path d="M100 15 C123 24 150 27 169 29 L169 117 C169 154 135 178 100 194 C65 178 31 154 31 117 L31 29 C50 27 77 24 100 15 Z" fill="none" stroke="#fff" stroke-opacity=".92" stroke-width="2.2"/>
+<text x="100" y="47" text-anchor="middle" font-family="'Segoe UI','Geist',Arial,sans-serif" font-weight="700" font-size="17.5" fill="#fff">Microsoft</text>
+<text x="100" y="62" text-anchor="middle" font-family="'Segoe UI','Geist',Arial,sans-serif" font-weight="400" font-size="10.5" letter-spacing="2.6" fill="#eceef2">CERTIFIED</text>
+<path d="M9 79 Q100 63 191 79 L191 109 Q100 93 9 109 Z" fill="url(#mb-rib)" stroke="#26282d" stroke-width="3" stroke-linejoin="round"/>
+<path id="mb-arc" d="M14 102.5 Q100 86.5 186 102.5" fill="none"/>
+<text font-family="'Segoe UI','Geist',Arial,sans-serif" font-weight="700" font-size="21" letter-spacing="1.4" fill="#1f2125"><textPath href="#mb-arc" startOffset="50%" text-anchor="middle">ASSOCIATE</textPath></text>
+<polygon points="85.00,131.50 87.53,138.52 94.99,138.76 89.09,143.33 91.17,150.49 85.00,146.30 78.83,150.49 80.91,143.33 75.01,138.76 82.47,138.52" fill="#fff"/><polygon points="115.00,131.50 117.53,138.52 124.99,138.76 119.09,143.33 121.17,150.49 115.00,146.30 108.83,150.49 110.91,143.33 105.01,138.76 112.47,138.52" fill="#fff"/>
+<path d="M100 5 C126 15 156 18 179 20 L179 117 C179 160 142 187 100 205 C58 187 21 160 21 117 L21 20 C44 18 74 15 100 5 Z" fill="url(#mb-gloss)"/>
+</symbol>
+<symbol id="msb-sil" viewBox="0 0 200 210"><path d="M100 5 C126 15 156 18 179 20 L179 117 C179 160 142 187 100 205 C58 187 21 160 21 117 L21 20 C44 18 74 15 100 5 Z"/><path d="M9 79 Q100 63 191 79 L191 109 Q100 93 9 109 Z"/><path d="M17 95 L3 106 L15 117 L26 108 Z"/><path d="M183 95 L197 106 L185 117 L174 108 Z"/></symbol>
+</defs></svg>
+<nav class="nav" aria-label="Sections">
+  <div class="nav-in">
+    <a class="mark" href="#top">SCB</a>
+    <a class="l" href="#work">Work</a>
+    <a class="l" href="#projects">Projects</a>
+    <a class="l" href="#skills">Skills</a>
+    <a class="l" href="#contact">Contact</a>
+    <button class="pill-btn copy" type="button" data-copy="bosemrgn@gmail.com">Copy email</button>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="glow" aria-hidden="true"></div>
+  <div class="floor" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="intro">
+      <span class="status"><span class="dot"></span>Open to work anywhere · Remote, hybrid or relocation</span>
+      <h1>Subash<br>Chandra Bose</h1>
+      <p class="tagline" id="tagline">I build the <b>pipelines</b>, run the <b>cloud</b> and <em class="s">secure</em> what ships.</p>
+      <div class="roles" id="roles"><span>DevOps Engineer</span><span>Cloud Support Engineer</span><span>Security Engineer</span></div>
+      <div class="cta">
+        <a class="solid" href="#projects">View projects</a>
+        <a class="ghost" href="https://github.com/Subash-1507" target="_blank" rel="noopener">GitHub</a>
+        <a class="ghost" href="https://www.linkedin.com/in/subash-chandra-bose-014bb21b5" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+    <div class="stage3d" aria-hidden="true">
+      <div class="fallback" id="fallback"></div>
+      <canvas id="scene"></canvas>
+      <div class="tip" id="tip" hidden></div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section id="work" class="wrap" aria-labelledby="impact-h">
+    <div class="sh">
+      <div class="sh-l"><span class="label">Results</span><h2 id="impact-h">Impact in <em class="s">production</em></h2></div>
+      <p class="side">About 2 years running AWS production at Pennywise Solutions, an Ogilvy Group company.</p>
+    </div>
+    <div class="bento">
+      <div class="tile s2">
+        <span class="label">Cost</span>
+        <div class="big">−15<sup>%</sup></div>
+        <p><b>Monthly AWS spend</b> after finding and removing idle resources.</p>
+      </div>
+      <div class="tile s2">
+        <span class="label">Reliability</span>
+        <div class="big">~25<sup>%</sup></div>
+        <p><b>Better backup reliability</b> after tracing failures in CloudWatch and CloudTrail.</p>
+      </div>
+      <div class="tile s2">
+        <span class="label">Response</span>
+        <div class="big">~25<sup>%</sup></div>
+        <p><b>Faster incident response</b> for a 12-member team, via Jenkins to Teams alerts.</p>
+      </div>
+      <div class="tile s3 certs">
+        <div class="badge3d" role="img" aria-label="Microsoft Certified Associate badge"><div class="b"><svg class="l e" viewBox="0 0 200 210" style="transform:translateZ(-0.9px)"><use href="#msb-sil"/></svg><svg class="l e" viewBox="0 0 200 210" style="transform:translateZ(-1.8px)"><use href="#msb-sil"/></svg><svg class="l e" viewBox="0 0 200 210" style="transform:translateZ(-2.7px)"><use href="#msb-sil"/></svg><svg class="l e" viewBox="0 0 200 210" style="transform:translateZ(-3.6px)"><use href="#msb-sil"/></svg><svg class="l e" viewBox="0 0 200 210" style="transform:translateZ(-4.5px)"><use href="#msb-sil"/></svg><svg class="l e" viewBox="0 0 200 210" style="transform:translateZ(-5.4px)"><use href="#msb-sil"/></svg><svg class="l e" viewBox="0 0 200 210" style="transform:translateZ(-6.3px)"><use href="#msb-sil"/></svg><svg class="l e" viewBox="0 0 200 210" style="transform:translateZ(-7.2px)"><use href="#msb-sil"/></svg><svg class="l f" viewBox="0 0 200 210"><use href="#msb"/></svg><svg class="l s" viewBox="0 0 200 210" aria-hidden="true"><g clip-path="url(#mb-sil)"><g transform="skewX(-18)"><rect class="sweep" x="-90" y="-10" width="46" height="240" fill="url(#mb-shine)"/></g></g></svg></div></div>
+        <span class="label">Microsoft Certified</span>
+        <div class="codes" id="codes">
+          <a class="flip" href="https://learn.microsoft.com/api/credentials/share/en-us/SubashChandraBose-1946/9DDDED6B3D30360?sharingId=2573345FCFA21FB5" target="_blank" rel="noopener" data-r="security cloud" title="Cloud &amp; AI Security Engineer Associate, 2026" aria-label="SC-500, Associate level. Opens the Microsoft credential"><span class="fi"><span class="ff">SC-500</span><span class="fb">Associate</span></span></a>
+          <a class="flip" href="https://learn.microsoft.com/api/credentials/share/en-us/SubashChandraBoseMurugan-6649/48CB4ACBCF86E42B?sharingId=12E7C5961A8F7B62" target="_blank" rel="noopener" data-r="cloud devops" title="Azure Administrator Associate, 2026" aria-label="AZ-104, Associate level. Opens the Microsoft credential"><span class="fi"><span class="ff">AZ-104</span><span class="fb">Associate</span></span></a>
+          <a class="flip" href="https://learn.microsoft.com/api/credentials/share/en-us/SubashChandraBoseMurugan-6649/BB51AB185F13DAA6?sharingId=12E7C5961A8F7B62" target="_blank" rel="noopener" data-r="cloud" title="Fabric Analytics Engineer Associate, 2026" aria-label="DP-600, Associate level. Opens the Microsoft credential"><span class="fi"><span class="ff">DP-600</span><span class="fb">Associate</span></span></a>
+          <a class="flip" href="https://learn.microsoft.com/api/credentials/share/en-us/SubashChandraBoseMurugan-6649/85912939314F9F2A?sharingId=12E7C5961A8F7B62" target="_blank" rel="noopener" data-r="security" title="Security Operations Analyst Associate, 2025" aria-label="SC-200, Associate level. Opens the Microsoft credential"><span class="fi"><span class="ff">SC-200</span><span class="fb">Associate</span></span></a>
+          <a class="flip" href="https://learn.microsoft.com/api/credentials/share/en-us/SubashChandraBoseMurugan-6649/6BCBAEF9796A3D65?sharingId=12E7C5961A8F7B62" target="_blank" rel="noopener" data-r="cloud devops security" title="Azure Fundamentals, 2024" aria-label="AZ-900, Fundamentals level. Opens the Microsoft credential"><span class="fi"><span class="ff">AZ-900</span><span class="fb fun">Fundamentals</span></span></a>
+        </div>
+        <p><b>Five certifications</b>, 2024 to 2026: Security Engineer, Azure Administrator, Fabric Analytics, Security Operations, Azure Fundamentals.</p>
+      </div>
+      <div class="tile s3">
+        <span class="label">Hardening</span>
+        <div class="big">A+</div>
+        <p><b>SSL Labs rating</b> on an Nginx server hardened with TLS 1.2/1.3, HSTS and OCSP stapling.</p>
+        <div class="bar" aria-hidden="true"><i style="width:100%"></i></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="wrap" aria-labelledby="proj-h">
+    <div class="sh">
+      <div class="sh-l"><span class="label">Selected work · GitHub</span><h2 id="proj-h">Projects</h2></div>
+      <div>
+        <div class="lens" role="group" aria-label="Filter by role">
+          <button type="button" id="lens-all" data-role="all" aria-pressed="true">All</button>
+          <button type="button" id="lens-devops" data-role="devops" aria-pressed="false">DevOps</button>
+          <button type="button" id="lens-cloud" data-role="cloud" aria-pressed="false">Cloud</button>
+          <button type="button" id="lens-security" data-role="security" aria-pressed="false">Security</button>
+        </div>
+        <p class="count" id="count"></p>
+      </div>
+    </div>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <section class="wrap" aria-labelledby="xp-h">
+    <div class="sh">
+      <div class="sh-l"><span class="label">Career</span><h2 id="xp-h">Experience</h2></div>
+    </div>
+    <div class="xp">
+      <article class="job">
+        <div class="when">Jan 2024 – Apr 2025<br>Hyderabad, India</div>
+        <div>
+          <h3>Associate Engineer, IT &amp; DevOps</h3>
+          <p class="org">Pennywise Solutions Pvt. Ltd. · An Ogilvy Group company</p>
+          <ul>
+            <li>Ran and supported AWS production environments, troubleshooting application and infrastructure failures from Docker container logs in a Jenkins controller-agent CI/CD setup.</li>
+            <li>Cut monthly AWS spend by 15% by identifying and decommissioning idle resources.</li>
+            <li>Restored failing automated AWS backups after a leadership escalation by tracing the root cause in CloudWatch and CloudTrail, improving backup reliability by ~25%.</li>
+            <li>Connected Jenkins pipelines to Microsoft Teams webhooks for real-time build and incident alerts, cutting incident response time by ~25%.</li>
+            <li>Handled SSL certificate renewals, security patching and disaster recovery planning with AWS Backup; built proof-of-concept GitHub Actions workflows.</li>
+          </ul>
+        </div>
+      </article>
+      <article class="job">
+        <div class="when">Aug 2023 – Dec 2023<br>Coimbatore, India</div>
+        <div>
+          <h3>Engineer, Technology</h3>
+          <p class="org">Verticurl · A division of Ogilvy</p>
+          <ul>
+            <li>Built Jenkins CI/CD pipelines, deployed Docker containers and administered Linux servers on AWS.</li>
+            <li>Earned a full-time Engineer role at Pennywise Solutions through a technical assessment.</li>
+          </ul>
+        </div>
+      </article>
+      <article class="job">
+        <div class="when">Nov 2021 – Mar 2022</div>
+        <div>
+          <h3>Intern, Future Ready Talent Program</h3>
+          <p class="org">Microsoft &amp; GitHub</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="skills" class="wrap" aria-labelledby="sk-h">
+    <div class="sh">
+      <div class="sh-l"><span class="label">Toolbox</span><h2 id="sk-h">Skills</h2></div>
+      <p class="side">The role filter above also highlights the skill groups each role uses.</p>
+    </div>
+    <div class="skills" id="skillgrid"></div>
+  </section>
+
+  <section class="wrap" aria-labelledby="edu-h">
+    <div class="sh">
+      <div class="sh-l"><span class="label">Education</span><h2 id="edu-h">Study</h2></div>
+    </div>
+    <div class="edu">
+      <div class="tile">
+        <span class="label">2025 – present · Final year</span>
+        <h3>M.Tech, Cybersecurity</h3>
+        <p>Amrita Vishwa Vidyapeetham. Coursework completed.</p>
+      </div>
+      <div class="tile">
+        <span class="label">2019 – 2023</span>
+        <h3>B.Tech, Electronics and Communication</h3>
+        <p>Karunya Institute of Technology and Sciences.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="contact" id="contact">
+  <div class="glow" aria-hidden="true" style="top:auto;bottom:-40%;left:-10%;right:auto"></div>
+  <div class="wrap">
+    <span class="label">Contact</span>
+    <h2>Hiring for DevOps, cloud or <em class="s">security</em>?</h2>
+    <p style="color:var(--muted);max-width:52ch">Available to join immediately, anywhere in the world: remote, hybrid or on-site with relocation.</p>
+    <div class="cta">
+      <span class="email" id="email">bosemrgn@gmail.com</span>
+      <button class="ghost copy" type="button" data-copy="bosemrgn@gmail.com">Copy email</button>
+    </div>
+    <div class="links">
+      <span class="mono">+91 91501 02969</span>
+      <a href="https://github.com/Subash-1507" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/subash-chandra-bose-014bb21b5" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://medium.com/@subashchandra_71374" target="_blank" rel="noopener">Medium</a>
+    </div>
+    <div class="foot"><span>Subash Chandra Bose · DevOps · Cloud · Security</span><span>Project details from each repository's README</span></div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function(){
+  var GH="https://github.com/Subash-1507/";
+  var reduce=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var LABEL={devops:"DevOps",cloud:"Cloud",security:"Security"};
+  var TAG={
+    all:'I build the <b>pipelines</b>, run the <b>cloud</b> and <em class="s">secure</em> what ships.',
+    devops:'I build <b>CI/CD pipelines</b>, write <b>Terraform</b> and run containers on <em class="s">Kubernetes</em>.',
+    cloud:'I keep <b>AWS and Azure</b> healthy: incidents, root cause, backups and <em class="s">cost</em>.',
+    security:'I write <b>detections</b>, scan for <b>vulnerabilities</b> and <em class="s">harden</em> what ships.'
+  };
+  var ROLES={all:["DevOps Engineer","Cloud Support Engineer","Security Engineer"],devops:["DevOps Engineer","DevSecOps"],cloud:["Cloud Support Engineer","CloudOps Engineer"],security:["Security Engineer","SOC / Detection"]};
+
+  var P=[
+    {t:"Qwen LLM Chatbot on Kubernetes",r:["devops","cloud"],repo:"Qwen-Chatbot-Completed",
+     d:"Two-tier chatbot (Flask frontend, Qwen2.5 backend) built into Docker images and deployed to Kubernetes with ClusterIP and NodePort services, resource limits and health probes. An HPA scales the backend from 1 to 3 replicas at 60% CPU.",
+     s:["Docker","Kubernetes","HPA","Flask","Codespaces"]},
+    {t:"SOC Detection & Threat Hunting Lab",r:["security"],repo:"cyber-detection-engineering-lab",
+     d:"Blue-team lab with custom Snort 3 rules feeding Wazuh and Splunk. Detected DNS spoofing, ARP poisoning, SSH brute force and ICMP flood DoS, then ran Nessus scans and triaged findings by severity.",
+     flow:["Attack","Telemetry","Detect","Analyze","Mitigate"],
+     s:["Snort 3","Wazuh","Splunk","Nessus","Kali"]},
+    {t:"Azure DevOps & Linux Labs",r:["devops","cloud"],repo:"Azure-DevOps-and-Linux-Practical-Labs",
+     d:"Terraform and ARM templates for VNets, NSGs, peering, VM Scale Sets, App Service, PostgreSQL and AKS. Pipelines in Azure DevOps and Jenkins push images to ACR and deploy to AKS, with Entra ID RBAC, MFA and Key Vault.",
+     s:["Terraform","ARM","AKS","Azure DevOps","Jenkins","ACR"]},
+    {t:"Nginx TLS Hardening, A+",r:["security","cloud"],repo:"Nginx-SSL-TLS-Hardening-with-A-plus-SSL-Labs-Rating",
+     d:"Ubuntu 22.04 server on DigitalOcean with a Let's Encrypt certificate, TLS 1.2/1.3 only, strong ciphers, HSTS preload, OCSP stapling and HTTPS redirection. Rated A+ by SSL Labs.",
+     s:["Nginx","Let's Encrypt","OpenSSL","Ubuntu"]},
+    {t:"Android SAST Pipeline",r:["security","devops"],repo:"Enterprise-apk-analyzer",
+     d:"Python DevSecOps tool that decompiles APKs, audits manifest flags and exported components, finds hardcoded secrets and checks hashes against the VirusTotal API, then writes an HTML report for SOC review.",
+     s:["Python","Apktool","VirusTotal API","SAST"]},
+    {t:"Adobe Cloud Manager Git Integration",r:["devops","cloud"],repo:"Adobe-cloud-manager-external-git-integration",
+     d:"Customer-managed Bitbucket repository connected to Adobe Cloud Manager with multiple Git remotes, push webhooks and scoped access tokens, so commits trigger the Dev, Stage and Production pipelines.",
+     s:["Git","Bitbucket","Webhooks","CI/CD"]},
+    {t:"Anomaly-Based Threat Detection",r:["security"],repo:"Data_Mining_and_MachineLearning_project_new",
+     d:"Isolation Forest over CPU, network, login, file-access and process telemetry, shown in a Streamlit dashboard. A RAG layer adds MITRE ATT&CK and OWASP context to explain each detection.",
+     s:["Python","Scikit-learn","Streamlit","LangChain"]},
+    {t:"LAMP Stack Performance Tuning",r:["cloud","devops"],repo:"lamp-stack-performance-tuning",
+     d:"WordPress on Apache with MPM Event, PHP-FPM and caching, load-tested with Apache Bench. Hardened with firewall rules, TLS and ServerTokens, and a PHP app containerized with Docker Compose.",
+     s:["Apache","MySQL","PHP-FPM","Docker Compose"]},
+    {t:"Secure Authentication System",r:["security"],repo:"Secure_System_Engineering",
+     d:"Flask login with bcrypt hashing, rate limiting, account lockout, TOTP two-factor and OTP replay prevention, tested against its own brute-force attack script.",
+     s:["Python","Flask","bcrypt","PyOTP"]},
+    {t:"SELinux on RHEL",r:["security","cloud"],repo:"selinux-webserver-configuration-rhel",
+     d:"Apache with a custom document root on Red Hat Linux under SELinux enforcement. Diagnosed 403 errors and fixed them with chcon and semanage instead of disabling SELinux.",
+     s:["RHEL","SELinux","Apache httpd"]},
+    {t:"Helm Charts & Flask on AKS",r:["devops","cloud"],repo:"Helm-works",
+     d:"Applications packaged as Helm charts and a Python Flask app deployed to an AKS cluster, with a Jenkins Docker agent image for CI builds.",
+     s:["Helm","AKS","Kubernetes","Jenkins"]},
+    {t:"Serverless Web Scraper",r:["cloud"],repo:"Website_scrap-using-AWS-lambda",
+     d:"Python scraper on AWS Lambda with its dependencies packaged as a Lambda layer for serverless execution.",
+     s:["AWS Lambda","Python"]}
+  ];
+  var S=[
+    {h:"Cloud platforms",r:["cloud","devops"],v:["AWS","EC2","VPC","CloudWatch","CloudTrail","AWS Backup","Lambda","Azure","VM Scale Sets","VNet / NSG","AKS","Entra ID","Key Vault","Microsoft Fabric"]},
+    {h:"CI/CD & source control",r:["devops"],v:["Jenkins","GitHub Actions","Azure DevOps","Git","GitHub","Bitbucket","Webhooks"]},
+    {h:"Containers & orchestration",r:["devops","cloud"],v:["Docker","Docker Compose","Kubernetes","HPA","Helm","ACR"]},
+    {h:"Infrastructure as code & scripting",r:["devops","cloud"],v:["Terraform","ARM templates","YAML","Python","SQL","KQL"]},
+    {h:"Monitoring & logging",r:["cloud","security","devops"],v:["CloudWatch","CloudTrail","Splunk","Wazuh","Microsoft Sentinel","Log Analytics","Alerting"]},
+    {h:"Cloud operations",r:["cloud"],v:["Incident troubleshooting","Root cause analysis","Backup & DR","Cost optimization","Patch management","SSL certificates"]},
+    {h:"Security",r:["security"],v:["Snort IDS","Nessus","OpenVAS","ModSecurity WAF","OWASP Top 10","Burp Suite","Wireshark","SonarCloud","SAST","IAM / RBAC"]},
+    {h:"Linux & networking",r:["cloud","security","devops"],v:["Ubuntu","RHEL / SELinux","Kali","Nginx","Apache","TCP/IP","DNS","NAT","Subnetting"]}
+  ];
+  function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;");}
+  var ARROW='<svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 9L9 3M9 3H4M9 3V8" stroke="currentColor" stroke-width="1.4" fill="none"/></svg>';
+
+  var grid=document.getElementById("grid");
+  grid.innerHTML=P.map(function(p,i){
+    return '<article class="card tilt" data-r="'+p.r.join(" ")+'">'+
+      '<div class="card-top"><span class="idx">'+String(i+1).padStart(2,"0")+'</span><div class="rtags">'+p.r.map(function(r){return "<span>"+LABEL[r]+"</span>";}).join("")+'</div></div>'+
+      '<h3>'+esc(p.t)+'</h3>'+
+      (p.flow?'<div class="flow">'+p.flow.map(function(f){return "<span>"+f+"</span>";}).join("<em>→</em>")+'</div>':'')+
+      '<p>'+esc(p.d)+'</p>'+
+      '<div class="stack">'+p.s.map(function(s){return "<span>"+esc(s)+"</span>";}).join("")+'</div>'+
+      '<a class="repo" href="'+GH+p.repo+'" target="_blank" rel="noopener">'+esc(p.repo)+ARROW+'</a>'+
+    '</article>';
+  }).join("");
+
+  document.getElementById("skillgrid").innerHTML=S.map(function(s){
+    return '<div class="sk" data-r="'+s.r.join(" ")+'"><span class="label">'+esc(s.h)+'</span><div class="chips">'+s.v.map(function(v){return "<span>"+esc(v)+"</span>";}).join("")+'</div></div>';
+  }).join("");
+
+  function has(el,role){return el.dataset.r.split(" ").indexOf(role)>-1;}
+  function apply(role){
+    document.querySelectorAll(".lens button").forEach(function(b){b.setAttribute("aria-pressed",String(b.dataset.role===role));});
+    document.getElementById("tagline").innerHTML=TAG[role];
+    document.getElementById("roles").innerHTML=ROLES[role].map(function(r){return "<span>"+r+"</span>";}).join("");
+    var n=0;
+    document.querySelectorAll(".card").forEach(function(c){var ok=role==="all"||has(c,role);c.hidden=!ok;if(ok)n++;});
+    document.getElementById("count").textContent=role==="all"?n+" projects · all public on GitHub":n+" of "+P.length+" projects for "+LABEL[role]+" roles";
+    document.querySelectorAll(".sk,#codes .flip").forEach(function(e){e.classList.toggle("dim",role!=="all"&&!has(e,role));});
+  }
+  document.querySelectorAll(".lens button").forEach(function(b){
+    b.addEventListener("click",function(){
+      apply(b.dataset.role);
+      try{history.replaceState(null,"",b.dataset.role==="all"?location.pathname+location.search:"#"+b.dataset.role);}catch(e){}
+    });
+  });
+  var start="all";
+  try{var h=(location.hash||"").slice(1);if(TAG[h])start=h;}catch(e){}
+  apply(start);
+
+  document.querySelectorAll(".copy").forEach(function(btn){
+    var orig=btn.textContent;
+    btn.addEventListener("click",function(){
+      function sel(){var t=document.getElementById("email");var r=document.createRange();r.selectNodeContents(t);var s=getSelection();s.removeAllRanges();s.addRange(r);btn.textContent="Selected below";}
+      try{navigator.clipboard.writeText(btn.dataset.copy).then(function(){btn.textContent="Copied";},sel);}catch(e){sel();}
+      setTimeout(function(){btn.textContent=orig;},2000);
+    });
+  });
+
+  // name glows where the cursor is
+  var nm=document.querySelector(".hero h1");
+  nm.addEventListener("pointermove",function(e){
+    var r=nm.getBoundingClientRect();
+    nm.style.setProperty("--gx",(e.clientX-r.left)+"px");nm.style.setProperty("--gy",(e.clientY-r.top)+"px");nm.style.setProperty("--ga","1");
+  });
+  nm.addEventListener("pointerleave",function(){nm.style.setProperty("--ga","0");});
+
+  // 3D tilt on cards
+  if(!reduce&&window.matchMedia&&matchMedia("(pointer: fine)").matches){
+    document.querySelectorAll(".tilt").forEach(function(c){
+      c.addEventListener("pointermove",function(e){
+        var r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;
+        c.style.transform="perspective(1000px) rotateX("+((.5-y)*5).toFixed(2)+"deg) rotateY("+((x-.5)*6).toFixed(2)+"deg) translateY(-2px)";
+        c.style.setProperty("--mx",(x*100).toFixed(1)+"%");c.style.setProperty("--my",(y*100).toFixed(1)+"%");
+      });
+      c.addEventListener("pointerleave",function(){c.style.transform="";});
+    });
+  }
+
+  // Saturn: a banded planet with rings, and two orbits of tool logos linked into one network
+  (function(){
+    var cv=document.getElementById("scene");
+    if(!window.THREE||!cv)return;
+    try{
+      var T=THREE, R=new T.WebGLRenderer({canvas:cv,antialias:true,alpha:true});
+      R.setClearColor(0x000000,0);
+      var scene=new T.Scene(), cam=new T.PerspectiveCamera(36,1,.1,100);
+      var ICONS={"amazonaws":"M6.763 10.036c0 .296.032.535.088.71.064.176.144.368.256.576.04.063.056.127.056.183 0 .08-.048.16-.152.24l-.503.335a.383.383 0 0 1-.208.072c-.08 0-.16-.04-.239-.112a2.47 2.47 0 0 1-.287-.375 6.18 6.18 0 0 1-.248-.471c-.622.734-1.405 1.101-2.347 1.101-.67 0-1.205-.191-1.596-.574-.391-.384-.59-.894-.59-1.533 0-.678.239-1.23.726-1.644.487-.415 1.133-.623 1.955-.623.272 0 .551.024.846.064.296.04.6.104.918.176v-.583c0-.607-.127-1.03-.375-1.277-.255-.248-.686-.367-1.3-.367-.28 0-.568.031-.863.103-.295.072-.583.16-.862.272a2.287 2.287 0 0 1-.28.104.488.488 0 0 1-.127.023c-.112 0-.168-.08-.168-.247v-.391c0-.128.016-.224.056-.28a.597.597 0 0 1 .224-.167c.279-.144.614-.264 1.005-.36a4.84 4.84 0 0 1 1.246-.151c.95 0 1.644.216 2.091.647.439.43.662 1.085.662 1.963v2.586zm-3.24 1.214c.263 0 .534-.048.822-.144.287-.096.543-.271.758-.51.128-.152.224-.32.272-.512.047-.191.08-.423.08-.694v-.335a6.66 6.66 0 0 0-.735-.136 6.02 6.02 0 0 0-.75-.048c-.535 0-.926.104-1.19.32-.263.215-.39.518-.39.917 0 .375.095.655.295.846.191.2.47.296.838.296zm6.41.862c-.144 0-.24-.024-.304-.08-.064-.048-.12-.16-.168-.311L7.586 5.55a1.398 1.398 0 0 1-.072-.32c0-.128.064-.2.191-.2h.783c.151 0 .255.025.31.08.065.048.113.16.16.312l1.342 5.284 1.245-5.284c.04-.16.088-.264.151-.312a.549.549 0 0 1 .32-.08h.638c.152 0 .256.025.32.08.063.048.12.16.151.312l1.261 5.348 1.381-5.348c.048-.16.104-.264.16-.312a.52.52 0 0 1 .311-.08h.743c.127 0 .2.065.2.2 0 .04-.009.08-.017.128a1.137 1.137 0 0 1-.056.2l-1.923 6.17c-.048.16-.104.263-.168.311a.51.51 0 0 1-.303.08h-.687c-.151 0-.255-.024-.32-.08-.063-.056-.119-.16-.15-.32l-1.238-5.148-1.23 5.14c-.04.16-.087.264-.15.32-.065.056-.177.08-.32.08zm10.256.215c-.415 0-.83-.048-1.229-.143-.399-.096-.71-.2-.918-.32-.128-.071-.215-.151-.247-.223a.563.563 0 0 1-.048-.224v-.407c0-.167.064-.247.183-.247.048 0 .096.008.144.024.048.016.12.048.2.08.271.12.566.215.878.279.319.064.63.096.95.096.502 0 .894-.088 1.165-.264a.86.86 0 0 0 .415-.758.777.777 0 0 0-.215-.559c-.144-.151-.416-.287-.807-.415l-1.157-.36c-.583-.183-1.014-.454-1.277-.813a1.902 1.902 0 0 1-.4-1.158c0-.335.073-.63.216-.886.144-.255.335-.479.575-.654.24-.184.51-.32.83-.415.32-.096.655-.136 1.006-.136.175 0 .359.008.535.032.183.024.35.056.518.088.16.04.312.08.455.127.144.048.256.096.336.144a.69.69 0 0 1 .24.2.43.43 0 0 1 .071.263v.375c0 .168-.064.256-.184.256a.83.83 0 0 1-.303-.096 3.652 3.652 0 0 0-1.532-.311c-.455 0-.815.071-1.062.223-.248.152-.375.383-.375.71 0 .224.08.416.24.567.159.152.454.304.877.44l1.134.358c.574.184.99.44 1.237.767.247.327.367.702.367 1.117 0 .343-.072.655-.207.926-.144.272-.336.511-.583.703-.248.2-.543.343-.886.447-.36.111-.734.167-1.142.167zM21.698 16.207c-2.626 1.94-6.442 2.969-9.722 2.969-4.598 0-8.74-1.7-11.87-4.526-.247-.223-.024-.527.272-.351 3.384 1.963 7.559 3.153 11.877 3.153 2.914 0 6.114-.607 9.06-1.852.439-.2.814.287.383.607zM22.792 14.961c-.336-.43-2.22-.207-3.074-.103-.255.032-.295-.192-.063-.36 1.5-1.053 3.967-.75 4.254-.399.287.36-.08 2.826-1.485 4.007-.215.184-.423.088-.327-.151.32-.79 1.03-2.57.695-2.994z","docker":"M13.983 11.078h2.119a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.119a.185.185 0 00-.185.185v1.888c0 .102.083.185.185.185m-2.954-5.43h2.118a.186.186 0 00.186-.186V3.574a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m0 2.716h2.118a.187.187 0 00.186-.186V6.29a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.887c0 .102.082.185.185.186m-2.93 0h2.12a.186.186 0 00.184-.186V6.29a.185.185 0 00-.185-.185H8.1a.185.185 0 00-.185.185v1.887c0 .102.083.185.185.186m-2.964 0h2.119a.186.186 0 00.185-.186V6.29a.185.185 0 00-.185-.185H5.136a.186.186 0 00-.186.185v1.887c0 .102.084.185.186.186m5.893 2.715h2.118a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m-2.93 0h2.12a.185.185 0 00.184-.185V9.006a.185.185 0 00-.184-.186h-2.12a.185.185 0 00-.184.185v1.888c0 .102.083.185.185.185m-2.964 0h2.119a.185.185 0 00.185-.185V9.006a.185.185 0 00-.184-.186h-2.12a.186.186 0 00-.186.186v1.887c0 .102.084.185.186.185m-2.92 0h2.12a.185.185 0 00.184-.185V9.006a.185.185 0 00-.184-.186h-2.12a.185.185 0 00-.184.185v1.888c0 .102.082.185.185.185M23.763 9.89c-.065-.051-.672-.51-1.954-.51-.338.001-.676.03-1.01.087-.248-1.7-1.653-2.53-1.716-2.566l-.344-.199-.226.327c-.284.438-.49.922-.612 1.43-.23.97-.09 1.882.403 2.661-.595.332-1.55.413-1.744.42H.751a.751.751 0 00-.75.748 11.376 11.376 0 00.692 4.062c.545 1.428 1.355 2.48 2.41 3.124 1.18.723 3.1 1.137 5.275 1.137.983.003 1.963-.086 2.93-.266a12.248 12.248 0 003.823-1.389c.98-.567 1.86-1.288 2.61-2.136 1.252-1.418 1.998-2.997 2.553-4.4h.221c1.372 0 2.215-.549 2.68-1.009.309-.293.55-.65.707-1.046l.098-.288Z","git":"M23.546 10.93L13.067.452c-.604-.603-1.582-.603-2.188 0L8.708 2.627l2.76 2.76c.645-.215 1.379-.07 1.889.441.516.515.658 1.258.438 1.9l2.658 2.66c.645-.223 1.387-.078 1.9.435.721.72.721 1.884 0 2.604-.719.719-1.881.719-2.6 0-.539-.541-.674-1.337-.404-1.996L12.86 8.955v6.525c.176.086.342.203.488.348.713.721.713 1.883 0 2.6-.719.721-1.889.721-2.609 0-.719-.719-.719-1.879 0-2.598.182-.18.387-.316.605-.406V8.835c-.217-.091-.424-.222-.6-.401-.545-.545-.676-1.342-.396-2.009L7.636 3.7.45 10.881c-.6.605-.6 1.584 0 2.189l10.48 10.477c.604.604 1.582.604 2.186 0l10.43-10.43c.605-.603.605-1.582 0-2.187","github":"M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12","githubactions":"M10.984 13.836a.5.5 0 0 1-.353-.146l-.745-.743a.5.5 0 1 1 .706-.708l.392.391 1.181-1.18a.5.5 0 0 1 .708.707l-1.535 1.533a.504.504 0 0 1-.354.146zm9.353-.147l1.534-1.532a.5.5 0 0 0-.707-.707l-1.181 1.18-.392-.391a.5.5 0 1 0-.706.708l.746.743a.497.497 0 0 0 .706-.001zM4.527 7.452l2.557-1.585A1 1 0 0 0 7.09 4.17L4.533 2.56A1 1 0 0 0 3 3.406v3.196a1.001 1.001 0 0 0 1.527.85zm2.03-2.436L4 6.602V3.406l2.557 1.61zM24 12.5c0 1.93-1.57 3.5-3.5 3.5a3.503 3.503 0 0 1-3.46-3h-2.08a3.503 3.503 0 0 1-3.46 3 3.502 3.502 0 0 1-3.46-3h-.558c-.972 0-1.85-.399-2.482-1.042V17c0 1.654 1.346 3 3 3h.04c.244-1.693 1.7-3 3.46-3 1.93 0 3.5 1.57 3.5 3.5S13.43 24 11.5 24a3.502 3.502 0 0 1-3.46-3H8c-2.206 0-4-1.794-4-4V9.899A5.008 5.008 0 0 1 0 5c0-2.757 2.243-5 5-5s5 2.243 5 5a5.005 5.005 0 0 1-4.952 4.998A2.482 2.482 0 0 0 7.482 12h.558c.244-1.693 1.7-3 3.46-3a3.502 3.502 0 0 1 3.46 3h2.08a3.503 3.503 0 0 1 3.46-3c1.93 0 3.5 1.57 3.5 3.5zm-15 8c0 1.378 1.122 2.5 2.5 2.5s2.5-1.122 2.5-2.5-1.122-2.5-2.5-2.5S9 19.122 9 20.5zM5 9c2.206 0 4-1.794 4-4S7.206 1 5 1 1 2.794 1 5s1.794 4 4 4zm9 3.5c0-1.378-1.122-2.5-2.5-2.5S9 11.122 9 12.5s1.122 2.5 2.5 2.5 2.5-1.122 2.5-2.5zm9 0c0-1.378-1.122-2.5-2.5-2.5S18 11.122 18 12.5s1.122 2.5 2.5 2.5 2.5-1.122 2.5-2.5zm-13 8a.5.5 0 1 0 1 0 .5.5 0 0 0-1 0zm2 0a.5.5 0 1 0 1 0 .5.5 0 0 0-1 0zm12 0c0 1.93-1.57 3.5-3.5 3.5a3.503 3.503 0 0 1-3.46-3.002c-.007.001-.013.005-.021.005l-.506.017h-.017a.5.5 0 0 1-.016-.999l.506-.017c.018-.002.035.006.052.007A3.503 3.503 0 0 1 20.5 17c1.93 0 3.5 1.57 3.5 3.5zm-1 0c0-1.378-1.122-2.5-2.5-2.5S18 19.122 18 20.5s1.122 2.5 2.5 2.5 2.5-1.122 2.5-2.5z","helm":"M12.337 0c-.475 0-.861 1.016-.861 2.269 0 .527.069 1.011.183 1.396a8.514 8.514 0 0 0-3.961 1.22 5.229 5.229 0 0 0-.595-1.093c-.606-.866-1.34-1.436-1.79-1.43a.381.381 0 0 0-.217.066c-.39.273-.123 1.326.596 2.353.267.381.559.705.84.948a8.683 8.683 0 0 0-1.528 1.716h1.734a7.179 7.179 0 0 1 5.381-2.421 7.18 7.18 0 0 1 5.382 2.42h1.733a8.687 8.687 0 0 0-1.32-1.53c.35-.249.735-.643 1.078-1.133.719-1.027.986-2.08.596-2.353a.382.382 0 0 0-.217-.065c-.45-.007-1.184.563-1.79 1.43a4.897 4.897 0 0 0-.676 1.325 8.52 8.52 0 0 0-3.899-1.42c.12-.39.193-.887.193-1.429 0-1.253-.386-2.269-.862-2.269zM1.624 9.443v5.162h1.358v-1.968h1.64v1.968h1.357V9.443H4.62v1.838H2.98V9.443zm5.912 0v5.162h3.21v-1.108H8.893v-.95h1.64v-1.142h-1.64v-.84h1.853V9.443zm4.698 0v5.162h3.218v-1.362h-1.86v-3.8zm4.706 0v5.162h1.364v-2.643l1.357 1.225 1.35-1.232v2.65h1.365V9.443h-.614l-2.1 1.914-2.109-1.914zm-11.82 7.28a8.688 8.688 0 0 0 1.412 1.548 5.206 5.206 0 0 0-.841.948c-.719 1.027-.985 2.08-.596 2.353.39.273 1.289-.338 2.007-1.364a5.23 5.23 0 0 0 .595-1.092 8.514 8.514 0 0 0 3.961 1.219 5.01 5.01 0 0 0-.183 1.396c0 1.253.386 2.269.861 2.269.476 0 .862-1.016.862-2.269 0-.542-.072-1.04-.193-1.43a8.52 8.52 0 0 0 3.9-1.42c.121.4.352.865.675 1.327.719 1.026 1.617 1.637 2.007 1.364.39-.273.123-1.326-.596-2.353-.343-.49-.727-.885-1.077-1.135a8.69 8.69 0 0 0 1.202-1.36h-1.771a7.174 7.174 0 0 1-5.227 2.252 7.174 7.174 0 0 1-5.226-2.252z","jenkins":"M2.872 24h-.975a3.866 3.866 0 01-.07-.197c-.215-.666-.594-1.49-.692-2.154-.146-.984.78-1.039 1.374-1.465.915-.66 1.635-1.025 2.627-1.62.295-.179 1.182-.624 1.281-.829.201-.408-.345-.982-.49-1.3-.225-.507-.345-.937-.376-1.435-.824-.13-1.455-.627-1.844-1.185-.63-.925-1.066-2.635-.525-3.936.045-.103.254-.305.285-.463.06-.308-.105-.72-.12-1.048-.06-1.692.284-3.15 1.425-3.66.463-1.84 2.113-2.453 3.673-3.367.58-.342 1.224-.562 1.89-.807 2.372-.877 6.027-.712 7.994.783.836.633 2.176 1.97 2.656 2.939 1.262 2.555 1.17 6.825.287 9.934-.12.421-.29 1.032-.533 1.533-.168.35-.689 1.05-.625 1.36.064.314 1.19 1.17 1.432 1.395.434.422 1.26.975 1.324 1.5.07.557-.248 1.336-.41 1.875-.217.721-.436 1.441-.654 2.131H2.87zm11.104-3.54c-.545-.3-1.361-.622-2.065-.757-.87-.164-.78 1.188-.75 1.994.03.643.36 1.316.51 1.744.076.197.09.41.256.449.3.068 1.29-.326 1.575-.479.6-.328 1.064-.844 1.574-1.189.016-.17.016-.34.03-.508a2.648 2.648 0 00-1.095-.277c.314-.15.75-.15 1.035-.332l.016-.193c-.496-.03-.69-.254-1.021-.436zm7.454 2.935a17.78 17.78 0 00.465-1.752c.06-.287.215-.918.178-1.176-.059-.459-.684-.799-1.004-1.086-.584-.525-.95-.975-1.56-1.469-.249.375-.78.615-.983.914 1.447-.689 1.71 2.625 1.141 3.69.09.329.391.45.514.735l-.086.166h1.29c.013 0 .03 0 .044.014zm-6.634-.012c-.05-.074-.1-.135-.15-.209l-.301.195h.45zm2.77 0c.008-.209.018-.404.03-.598-.53.029-.825-.48-1.196-.527-.324-.045-.6.361-1.02.195-.095.105-.183.227-.284.316.154.18.295.375.424.584h.815c.014-.164.135-.285.3-.285.165 0 .284.121.284.27h.66zm2.116 0c-.314-.479-.947-.898-1.68-.555l-.03.541h1.71zm-8.51 0l-.104-.344c-.225-.72-.36-1.26-.405-1.68-.914-.436-1.875-.87-2.654-1.426-.15-.105-1.109-1.35-1.23-1.305-1.739.676-3.359 1.86-4.814 2.984.256.557.48 1.141.69 1.74h8.505zm8.265-2.113c-.029-.512-.164-1.56-.48-1.74-.66-.39-1.846.78-2.34.943.045.15.135.271.15.48.285-.074.645-.029.898.092-.299.03-.629.03-.824.164-.074.195.016.48-.029.764.69.197 1.5.303 2.385.332.164-.227.225-.645.211-1.082zm-4.08-.36c-.044.375.046.51.12.943 1.26.391 1.034-1.74-.135-.959zM8.76 19.5c-.45.457 1.27 1.082 1.814 1.115 0-.29.165-.564.135-.77-.65-.118-1.502-.042-1.945-.347zm5.565.215c0 .043-.061.03-.068.064.58.451 1.014.545 1.802.51.354-.262.67-.563 1.043-.807-.855.074-1.931.607-2.774.23zm3.42-17.726c-1.606-.906-4.35-1.591-6.076-.731-1.38.692-3.27 1.84-3.899 3.292.6 1.402-.166 2.686-.226 4.109-.018.757.36 1.42.391 2.242-.2.338-.825.38-1.26.356-.146-.729-.4-1.549-1.155-1.63-1.064-.116-1.845.764-1.89 1.683-.06 1.08.833 2.864 2.085 2.745.488-.046.608-.54 1.139-.54.285.57-.445.75-.523 1.154-.016.105.06.511.104.705.233.944.744 2.16 1.245 2.88.635.9 1.884 1.051 3.229 1.141.24-.525 1.125-.48 1.706-.346-.691-.27-1.336-.945-1.875-1.529-.615-.676-1.23-1.41-1.261-2.28 1.155 1.604 2.1 3 4.2 3.704 1.59.525 3.45-.254 4.664-1.109.51-.359.811-.93 1.17-1.439 1.35-1.936 1.98-4.71 1.846-7.394-.06-1.111-.06-2.221-.436-2.955-.389-.781-1.695-1.471-2.475-.781-.15-.764.63-1.23 1.545-.96-.66-.854-1.336-1.858-2.266-2.384zM13.58 14.896c.615 1.544 2.724 1.363 4.505 1.323-.084.194-.256.435-.465.515-.57.232-2.145.408-2.937-.012-.506-.27-.824-.873-1.102-1.227-.137-.172-.795-.608-.012-.609zm.164-.87c.893.464 2.52.517 3.731.48.066.267.066.593.068.913-1.55.08-3.386-.304-3.794-1.395h-.005zm6.675-.586c-.473.9-1.145 1.897-2.539 1.928-.023-.284-.045-.735 0-.904 1.064-.103 1.727-.646 2.543-1.017zm-.649-.667c-1.02.66-2.154 1.375-3.824 1.21-.351-.31-.485-1-.14-1.458.181.313.06.885.57.97.944.165 2.038-.579 2.73-.84.42-.713-.046-.976-.42-1.433-.782-.93-1.83-2.1-1.802-3.51.314-.224.346.346.391.45.404.96 1.424 2.175 2.174 3 .18.21.48.39.51.524.092.39-.254.854-.209 1.11zm-13.439-.675c-.314-.184-.393-.99-.768-1.01-.535-.03-.438 1.05-.436 1.68-.37-.33-.435-1.365-.164-1.89-.308-.15-.445.164-.618.284.22-1.59 2.34-.734 1.99.96zM4.713 5.995c-.685.756-.54 2.174-.459 3.188 1.244-.785 2.898.06 2.883 1.394.595-.016.223-.744.115-1.215-.353-1.528.592-3.187.041-4.59-1.064.084-1.939.52-2.578 1.215zm9.12 1.113c.307.562.404 1.148.84 1.57.195.19.574.424.387.95-.045.121-.365.391-.551.45-.674.195-2.254.03-1.721-.81.563.015 1.314.36 1.732-.045-.314-.524-.885-1.53-.674-2.13zm6.198-.013h.068c.33.668.6 1.375 1.004 1.965-.27.628-2.053 1.19-2.023.057.39-.17 1.05-.035 1.395-.25-.193-.556-.48-1.006-.434-1.771zm-6.927-1.617c-1.422-.33-2.131.592-2.56 1.553-.384-.094-.231-.615-.135-.883.255-.701 1.28-1.633 2.119-1.506.359.057.848.386.576.834zM9.642 1.593c-1.56.44-3.56 1.574-4.2 2.974.495-.07.84-.321 1.33-.351.186-.016.428.074.641.015.424-.104.78-1.065 1.102-1.41.31-.345.685-.496.94-.81.167-.09.409-.074.42-.33-.073-.075-.15-.135-.232-.105v.017z","kubernetes":"M10.204 14.35l.007.01-.999 2.413a5.171 5.171 0 0 1-2.075-2.597l2.578-.437.004.005a.44.44 0 0 1 .484.606zm-.833-2.129a.44.44 0 0 0 .173-.756l.002-.011L7.585 9.7a5.143 5.143 0 0 0-.73 3.255l2.514-.725.002-.009zm1.145-1.98a.44.44 0 0 0 .699-.337l.01-.005.15-2.62a5.144 5.144 0 0 0-3.01 1.442l2.147 1.523.004-.002zm.76 2.75l.723.349.722-.347.18-.78-.5-.623h-.804l-.5.623.179.779zm1.5-3.095a.44.44 0 0 0 .7.336l.008.003 2.134-1.513a5.188 5.188 0 0 0-2.992-1.442l.148 2.615.002.001zm10.876 5.97l-5.773 7.181a1.6 1.6 0 0 1-1.248.594l-9.261.003a1.6 1.6 0 0 1-1.247-.596l-5.776-7.18a1.583 1.583 0 0 1-.307-1.34L2.1 5.573c.108-.47.425-.864.863-1.073L11.305.513a1.606 1.606 0 0 1 1.385 0l8.345 3.985c.438.209.755.604.863 1.073l2.062 8.955c.108.47-.005.963-.308 1.34zm-3.289-2.057c-.042-.01-.103-.026-.145-.034-.174-.033-.315-.025-.479-.038-.35-.037-.638-.067-.895-.148-.105-.04-.18-.165-.216-.216l-.201-.059a6.45 6.45 0 0 0-.105-2.332 6.465 6.465 0 0 0-.936-2.163c.052-.047.15-.133.177-.159.008-.09.001-.183.094-.282.197-.185.444-.338.743-.522.142-.084.273-.137.415-.242.032-.024.076-.062.11-.089.24-.191.295-.52.123-.736-.172-.216-.506-.236-.745-.045-.034.027-.08.062-.111.088-.134.116-.217.23-.33.35-.246.25-.45.458-.673.609-.097.056-.239.037-.303.033l-.19.135a6.545 6.545 0 0 0-4.146-2.003l-.012-.223c-.065-.062-.143-.115-.163-.25-.022-.268.015-.557.057-.905.023-.163.061-.298.068-.475.001-.04-.001-.099-.001-.142 0-.306-.224-.555-.5-.555-.275 0-.499.249-.499.555l.001.014c0 .041-.002.092 0 .128.006.177.044.312.067.475.042.348.078.637.056.906a.545.545 0 0 1-.162.258l-.012.211a6.424 6.424 0 0 0-4.166 2.003 8.373 8.373 0 0 1-.18-.128c-.09.012-.18.04-.297-.029-.223-.15-.427-.358-.673-.608-.113-.12-.195-.234-.329-.349-.03-.026-.077-.062-.111-.088a.594.594 0 0 0-.348-.132.481.481 0 0 0-.398.176c-.172.216-.117.546.123.737l.007.005.104.083c.142.105.272.159.414.242.299.185.546.338.743.522.076.082.09.226.1.288l.16.143a6.462 6.462 0 0 0-1.02 4.506l-.208.06c-.055.072-.133.184-.215.217-.257.081-.546.11-.895.147-.164.014-.305.006-.48.039-.037.007-.09.02-.133.03l-.004.002-.007.002c-.295.071-.484.342-.423.608.061.267.349.429.645.365l.007-.001.01-.003.129-.029c.17-.046.294-.113.448-.172.33-.118.604-.217.87-.256.112-.009.23.069.288.101l.217-.037a6.5 6.5 0 0 0 2.88 3.596l-.09.218c.033.084.069.199.044.282-.097.252-.263.517-.452.813-.091.136-.185.242-.268.399-.02.037-.045.095-.064.134-.128.275-.034.591.213.71.248.12.556-.007.69-.282v-.002c.02-.039.046-.09.062-.127.07-.162.094-.301.144-.458.132-.332.205-.68.387-.897.05-.06.13-.082.215-.105l.113-.205a6.453 6.453 0 0 0 4.609.012l.106.192c.086.028.18.042.256.155.136.232.229.507.342.84.05.156.074.295.145.457.016.037.043.09.062.129.133.276.442.402.69.282.247-.118.341-.435.213-.71-.02-.039-.045-.096-.065-.134-.083-.156-.177-.261-.268-.398-.19-.296-.346-.541-.443-.793-.04-.13.007-.21.038-.294-.018-.022-.059-.144-.083-.202a6.499 6.499 0 0 0 2.88-3.622c.064.01.176.03.213.038.075-.05.144-.114.28-.104.266.039.54.138.87.256.154.06.277.128.448.173.036.01.088.019.13.028l.009.003.007.001c.297.064.584-.098.645-.365.06-.266-.128-.537-.423-.608zM16.4 9.701l-1.95 1.746v.005a.44.44 0 0 0 .173.757l.003.01 2.526.728a5.199 5.199 0 0 0-.108-1.674A5.208 5.208 0 0 0 16.4 9.7zm-4.013 5.325a.437.437 0 0 0-.404-.232.44.44 0 0 0-.372.233h-.002l-1.268 2.292a5.164 5.164 0 0 0 3.326.003l-1.27-2.296h-.01zm1.888-1.293a.44.44 0 0 0-.27.036.44.44 0 0 0-.214.572l-.003.004 1.01 2.438a5.15 5.15 0 0 0 2.081-2.615l-2.6-.44-.004.005z","linux":"M12.504 0c-.155 0-.315.008-.48.021-4.226.333-3.105 4.807-3.17 6.298-.076 1.092-.3 1.953-1.05 3.02-.885 1.051-2.127 2.75-2.716 4.521-.278.832-.41 1.684-.287 2.489a.424.424 0 00-.11.135c-.26.268-.45.6-.663.839-.199.199-.485.267-.797.4-.313.136-.658.269-.864.68-.09.189-.136.394-.132.602 0 .199.027.4.055.536.058.399.116.728.04.97-.249.68-.28 1.145-.106 1.484.174.334.535.47.94.601.81.2 1.91.135 2.774.6.926.466 1.866.67 2.616.47.526-.116.97-.464 1.208-.946.587-.003 1.23-.269 2.26-.334.699-.058 1.574.267 2.577.2.025.134.063.198.114.333l.003.003c.391.778 1.113 1.132 1.884 1.071.771-.06 1.592-.536 2.257-1.306.631-.765 1.683-1.084 2.378-1.503.348-.199.629-.469.649-.853.023-.4-.2-.811-.714-1.376v-.097l-.003-.003c-.17-.2-.25-.535-.338-.926-.085-.401-.182-.786-.492-1.046h-.003c-.059-.054-.123-.067-.188-.135a.357.357 0 00-.19-.064c.431-1.278.264-2.55-.173-3.694-.533-1.41-1.465-2.638-2.175-3.483-.796-1.005-1.576-1.957-1.56-3.368.026-2.152.236-6.133-3.544-6.139zm.529 3.405h.013c.213 0 .396.062.584.198.19.135.33.332.438.533.105.259.158.459.166.724 0-.02.006-.04.006-.06v.105a.086.086 0 01-.004-.021l-.004-.024a1.807 1.807 0 01-.15.706.953.953 0 01-.213.335.71.71 0 00-.088-.042c-.104-.045-.198-.064-.284-.133a1.312 1.312 0 00-.22-.066c.05-.06.146-.133.183-.198.053-.128.082-.264.088-.402v-.02a1.21 1.21 0 00-.061-.4c-.045-.134-.101-.2-.183-.333-.084-.066-.167-.132-.267-.132h-.016c-.093 0-.176.03-.262.132a.8.8 0 00-.205.334 1.18 1.18 0 00-.09.4v.019c.002.089.008.179.02.267-.193-.067-.438-.135-.607-.202a1.635 1.635 0 01-.018-.2v-.02a1.772 1.772 0 01.15-.768c.082-.22.232-.406.43-.533a.985.985 0 01.594-.2zm-2.962.059h.036c.142 0 .27.048.399.135.146.129.264.288.344.465.09.199.14.4.153.667v.004c.007.134.006.2-.002.266v.08c-.03.007-.056.018-.083.024-.152.055-.274.135-.393.2.012-.09.013-.18.003-.267v-.015c-.012-.133-.04-.2-.082-.333a.613.613 0 00-.166-.267.248.248 0 00-.183-.064h-.021c-.071.006-.13.04-.186.132a.552.552 0 00-.12.27.944.944 0 00-.023.33v.015c.012.135.037.2.08.334.046.134.098.2.166.268.01.009.02.018.034.024-.07.057-.117.07-.176.136a.304.304 0 01-.131.068 2.62 2.62 0 01-.275-.402 1.772 1.772 0 01-.155-.667 1.759 1.759 0 01.08-.668 1.43 1.43 0 01.283-.535c.128-.133.26-.2.418-.2zm1.37 1.706c.332 0 .733.065 1.216.399.293.2.523.269 1.052.468h.003c.255.136.405.266.478.399v-.131a.571.571 0 01.016.47c-.123.31-.516.643-1.063.842v.002c-.268.135-.501.333-.775.465-.276.135-.588.292-1.012.267a1.139 1.139 0 01-.448-.067 3.566 3.566 0 01-.322-.198c-.195-.135-.363-.332-.612-.465v-.005h-.005c-.4-.246-.616-.512-.686-.71-.07-.268-.005-.47.193-.6.224-.135.38-.271.483-.336.104-.074.143-.102.176-.131h.002v-.003c.169-.202.436-.47.839-.601.139-.036.294-.065.466-.065zm2.8 2.142c.358 1.417 1.196 3.475 1.735 4.473.286.534.855 1.659 1.102 3.024.156-.005.33.018.513.064.646-1.671-.546-3.467-1.089-3.966-.22-.2-.232-.335-.123-.335.59.534 1.365 1.572 1.646 2.757.13.535.16 1.104.021 1.67.067.028.135.06.205.067 1.032.534 1.413.938 1.23 1.537v-.043c-.06-.003-.12 0-.18 0h-.016c.151-.467-.182-.825-1.065-1.224-.915-.4-1.646-.336-1.77.465-.008.043-.013.066-.018.135-.068.023-.139.053-.209.064-.43.268-.662.669-.793 1.187-.13.533-.17 1.156-.205 1.869v.003c-.02.334-.17.838-.319 1.35-1.5 1.072-3.58 1.538-5.348.334a2.645 2.645 0 00-.402-.533 1.45 1.45 0 00-.275-.333c.182 0 .338-.03.465-.067a.615.615 0 00.314-.334c.108-.267 0-.697-.345-1.163-.345-.467-.931-.995-1.788-1.521-.63-.4-.986-.87-1.15-1.396-.165-.534-.143-1.085-.015-1.645.245-1.07.873-2.11 1.274-2.763.107-.065.037.135-.408.974-.396.751-1.14 2.497-.122 3.854a8.123 8.123 0 01.647-2.876c.564-1.278 1.743-3.504 1.836-5.268.048.036.217.135.289.202.218.133.38.333.59.465.21.201.477.335.876.335.039.003.075.006.11.006.412 0 .73-.134.997-.268.29-.134.52-.334.74-.4h.005c.467-.135.835-.402 1.044-.7zm2.185 8.958c.037.6.343 1.245.882 1.377.588.134 1.434-.333 1.791-.765l.211-.01c.315-.007.577.01.847.268l.003.003c.208.199.305.53.391.876.085.4.154.78.409 1.066.486.527.645.906.636 1.14l.003-.007v.018l-.003-.012c-.015.262-.185.396-.498.595-.63.401-1.746.712-2.457 1.57-.618.737-1.37 1.14-2.036 1.191-.664.053-1.237-.2-1.574-.898l-.005-.003c-.21-.4-.12-1.025.056-1.69.176-.668.428-1.344.463-1.897.037-.714.076-1.335.195-1.814.12-.465.308-.797.641-.984l.045-.022zm-10.814.049h.01c.053 0 .105.005.157.014.376.055.706.333 1.023.752l.91 1.664.003.003c.243.533.754 1.064 1.189 1.637.434.598.77 1.131.729 1.57v.006c-.057.744-.48 1.148-1.125 1.294-.645.135-1.52.002-2.395-.464-.968-.536-2.118-.469-2.857-.602-.369-.066-.61-.2-.723-.4-.11-.2-.113-.602.123-1.23v-.004l.002-.003c.117-.334.03-.752-.027-1.118-.055-.401-.083-.71.043-.94.16-.334.396-.4.69-.533.294-.135.64-.202.915-.47h.002v-.002c.256-.268.445-.601.668-.838.19-.201.38-.336.663-.336zm7.159-9.074c-.435.201-.945.535-1.488.535-.542 0-.97-.267-1.28-.466-.154-.134-.28-.268-.373-.335-.164-.134-.144-.333-.074-.333.109.016.129.134.199.2.096.066.215.2.36.333.292.2.68.467 1.167.467.485 0 1.053-.267 1.398-.466.195-.135.445-.334.648-.467.156-.136.149-.267.279-.267.128.016.034.134-.147.332a8.097 8.097 0 01-.69.468zm-1.082-1.583V5.64c-.006-.02.013-.042.029-.05.074-.043.18-.027.26.004.063 0 .16.067.15.135-.006.049-.085.066-.135.066-.055 0-.092-.043-.141-.068-.052-.018-.146-.008-.163-.065zm-.551 0c-.02.058-.113.049-.166.066-.047.025-.086.068-.14.068-.05 0-.13-.02-.136-.068-.01-.066.088-.133.15-.133.08-.031.184-.047.259-.005.019.009.036.03.03.05v.02h.003z","microsoftazure":"M22.379 23.343a1.62 1.62 0 0 0 1.536-2.14v.002L17.35 1.76A1.62 1.62 0 0 0 15.816.657H8.184A1.62 1.62 0 0 0 6.65 1.76L.086 21.204a1.62 1.62 0 0 0 1.536 2.139h4.741a1.62 1.62 0 0 0 1.535-1.103l.977-2.892 4.947 3.675c.28.208.618.32.966.32m-3.084-12.531 3.624 10.739a.54.54 0 0 1-.51.713v-.001h-.03a.54.54 0 0 1-.322-.106l-9.287-6.9h4.853m6.313 7.006c.116-.326.13-.694.007-1.058L9.79 1.76a1.722 1.722 0 0 0-.007-.02h6.034a.54.54 0 0 1 .512.366l6.562 19.445a.54.54 0 0 1-.338.684","nginx":"M12 0L1.605 6v12L12 24l10.395-6V6L12 0zm6 16.59c0 .705-.646 1.29-1.529 1.29-.631 0-1.351-.255-1.801-.81l-6-7.141v6.66c0 .721-.57 1.29-1.274 1.29H7.32c-.721 0-1.29-.6-1.29-1.29V7.41c0-.705.63-1.29 1.5-1.29.646 0 1.38.255 1.83.81l5.97 7.141V7.41c0-.721.6-1.29 1.29-1.29h.075c.72 0 1.29.6 1.29 1.29v9.18H18z","python":"M14.25.18l.9.2.73.26.59.3.45.32.34.34.25.34.16.33.1.3.04.26.02.2-.01.13V8.5l-.05.63-.13.55-.21.46-.26.38-.3.31-.33.25-.35.19-.35.14-.33.1-.3.07-.26.04-.21.02H8.77l-.69.05-.59.14-.5.22-.41.27-.33.32-.27.35-.2.36-.15.37-.1.35-.07.32-.04.27-.02.21v3.06H3.17l-.21-.03-.28-.07-.32-.12-.35-.18-.36-.26-.36-.36-.35-.46-.32-.59-.28-.73-.21-.88-.14-1.05-.05-1.23.06-1.22.16-1.04.24-.87.32-.71.36-.57.4-.44.42-.33.42-.24.4-.16.36-.1.32-.05.24-.01h.16l.06.01h8.16v-.83H6.18l-.01-2.75-.02-.37.05-.34.11-.31.17-.28.25-.26.31-.23.38-.2.44-.18.51-.15.58-.12.64-.1.71-.06.77-.04.84-.02 1.27.05zm-6.3 1.98l-.23.33-.08.41.08.41.23.34.33.22.41.09.41-.09.33-.22.23-.34.08-.41-.08-.41-.23-.33-.33-.22-.41-.09-.41.09zm13.09 3.95l.28.06.32.12.35.18.36.27.36.35.35.47.32.59.28.73.21.88.14 1.04.05 1.23-.06 1.23-.16 1.04-.24.86-.32.71-.36.57-.4.45-.42.33-.42.24-.4.16-.36.09-.32.05-.24.02-.16-.01h-8.22v.82h5.84l.01 2.76.02.36-.05.34-.11.31-.17.29-.25.25-.31.24-.38.2-.44.17-.51.15-.58.13-.64.09-.71.07-.77.04-.84.01-1.27-.04-1.07-.14-.9-.2-.73-.25-.59-.3-.45-.33-.34-.34-.25-.34-.16-.33-.1-.3-.04-.25-.02-.2.01-.13v-5.34l.05-.64.13-.54.21-.46.26-.38.3-.32.33-.24.35-.2.35-.14.33-.1.3-.06.26-.04.21-.02.13-.01h5.84l.69-.05.59-.14.5-.21.41-.28.33-.32.27-.35.2-.36.15-.36.1-.35.07-.32.04-.28.02-.21V6.07h2.09l.14.01zm-6.47 14.25l-.23.33-.08.41.08.41.23.33.33.23.41.08.41-.08.33-.23.23-.33.08-.41-.08-.41-.23-.33-.33-.23-.41-.08-.41.08z","redhat":"M16.009 13.386c1.577 0 3.86-.326 3.86-2.202a1.765 1.765 0 0 0-.04-.431l-.94-4.08c-.216-.898-.406-1.305-1.982-2.093-1.223-.625-3.888-1.658-4.676-1.658-.733 0-.947.946-1.822.946-.842 0-1.467-.706-2.255-.706-.757 0-1.25.515-1.63 1.576 0 0-1.06 2.99-1.197 3.424a.81.81 0 0 0-.028.245c0 1.162 4.577 4.974 10.71 4.974m4.101-1.435c.218 1.032.218 1.14.218 1.277 0 1.765-1.984 2.745-4.593 2.745-5.895.004-11.06-3.451-11.06-5.734a2.326 2.326 0 0 1 .19-.925C2.746 9.415 0 9.794 0 12.217c0 3.969 9.405 8.861 16.851 8.861 5.71 0 7.149-2.582 7.149-4.62 0-1.605-1.387-3.425-3.887-4.512","splunk":"M23.348 11.911l-2.241-1.091v-.65L24 11.621v.593l-2.893 1.438v-.636zm-5.397 1.841h-.961v-5.31h.961v3.116h.102l1.28-1.481.723.31-1.23 1.316 1.453 1.809-.888.311-1.44-1.996zm-2.577-.002v-2.068a2.685 2.685 0 0 0-.026-.42.791.791 0 0 0-.09-.26c-.113-.202-.308-.304-.59-.304a.888.888 0 0 0-.461.113.673.673 0 0 0-.286.33 1.012 1.012 0 0 0-.07.263c-.012.13-.019.262-.017.395v1.95h-.961v-3.614h.961l.002.485c.185-.2.373-.348.566-.437.192-.089.418-.134.673-.134.286 0 .527.058.721.177a1.016 1.016 0 0 1 .475.665 1.972 1.972 0 0 1 .054.448c.002.1.004.22.004.358v2.053zm-4.115.002l-.002-.485a1.783 1.783 0 0 1-.565.437 1.597 1.597 0 0 1-.674.135c-.285 0-.524-.057-.72-.17a.972.972 0 0 1-.425-.504.75.75 0 0 1-.054-.167 1.918 1.918 0 0 1-.033-.199 2.033 2.033 0 0 1-.017-.258 15.516 15.516 0 0 1-.005-.355V10.13h.956v2.07c-.003.141.006.282.026.42.015.092.045.18.09.26.113.204.308.306.59.306.36 0 .606-.15.74-.449.035-.082.06-.168.074-.257.017-.134.024-.269.022-.403v-1.95h.955v3.624zM7.184 8.44h.955v5.31h-.955zM5.759 11.9c0-.396-.08-.708-.24-.937a.759.759 0 0 0-.657-.345.804.804 0 0 0-.693.366c-.171.245-.256.574-.253.99 0 .405.084.723.25.957a.796.796 0 0 0 .69.347.685.685 0 0 0 .433-.135.985.985 0 0 0 .277-.34c.071-.14.121-.292.147-.448.03-.151.043-.3.046-.455m1.01-.036c.003.266-.04.532-.129.786-.082.23-.204.441-.364.626-.31.361-.764.567-1.24.563a1.67 1.67 0 0 1-.313-.028 1.041 1.041 0 0 1-.275-.098 1.33 1.33 0 0 1-.257-.178 2.379 2.379 0 0 1-.265-.268v2.293h-.929v-5.425h.93l.004.529c.169-.212.353-.368.55-.468.197-.1.426-.15.688-.147a1.509 1.509 0 0 1 1.156.507c.148.166.259.361.33.571.08.236.12.485.115.737m-4.21.89a.946.946 0 0 1-.102.441 1.007 1.007 0 0 1-.282.345c-.13.1-.275.173-.43.22a1.8 1.8 0 0 1-.546.08 1.985 1.985 0 0 1-.637-.097 1.964 1.964 0 0 1-.563-.32l.312-.505c.15.126.284.217.405.275.115.057.24.087.368.087a.557.557 0 0 0 .373-.12.396.396 0 0 0 .14-.322.475.475 0 0 0-.12-.318 1.306 1.306 0 0 0-.187-.173 9.231 9.231 0 0 0-.308-.232 6.787 6.787 0 0 1-.281-.21 2.11 2.11 0 0 1-.252-.232 1.039 1.039 0 0 1-.18-.275.826.826 0 0 1-.069-.347.893.893 0 0 1 .094-.409.935.935 0 0 1 .255-.314 1.22 1.22 0 0 1 .39-.203c.16-.05.327-.074.494-.072.184 0 .368.026.545.076.174.05.338.123.488.219l-.282.454a1.05 1.05 0 0 0-.608-.201.504.504 0 0 0-.323.102.307.307 0 0 0-.126.253c0 .098.041.193.113.26.074.078.203.186.385.325.185.136.336.253.457.355.104.085.202.182.286.286.065.08.115.173.145.273a.808.808 0 0 1 .046.299Z","terraform":"M1.44 0v7.575l6.561 3.79V3.787zm21.12 4.227l-6.561 3.791v7.574l6.56-3.787zM8.72 4.23v7.575l6.561 3.787V8.018zm0 8.405v7.575L15.28 24v-7.578z","ubuntu":"M17.61.455a3.41 3.41 0 0 0-3.41 3.41 3.41 3.41 0 0 0 3.41 3.41 3.41 3.41 0 0 0 3.41-3.41 3.41 3.41 0 0 0-3.41-3.41zM12.92.8C8.923.777 5.137 2.941 3.148 6.451a4.5 4.5 0 0 1 .26-.007 4.92 4.92 0 0 1 2.585.737A8.316 8.316 0 0 1 12.688 3.6 4.944 4.944 0 0 1 13.723.834 11.008 11.008 0 0 0 12.92.8zm9.226 4.994a4.915 4.915 0 0 1-1.918 2.246 8.36 8.36 0 0 1-.273 8.303 4.89 4.89 0 0 1 1.632 2.54 11.156 11.156 0 0 0 .559-13.089zM3.41 7.932A3.41 3.41 0 0 0 0 11.342a3.41 3.41 0 0 0 3.41 3.409 3.41 3.41 0 0 0 3.41-3.41 3.41 3.41 0 0 0-3.41-3.41zm2.027 7.866a4.908 4.908 0 0 1-2.915.358 11.1 11.1 0 0 0 7.991 6.698 11.234 11.234 0 0 0 2.422.249 4.879 4.879 0 0 1-.999-2.85 8.484 8.484 0 0 1-.836-.136 8.304 8.304 0 0 1-5.663-4.32zm11.405.928a3.41 3.41 0 0 0-3.41 3.41 3.41 3.41 0 0 0 3.41 3.41 3.41 3.41 0 0 0 3.41-3.41 3.41 3.41 0 0 0-3.41-3.41z"};
+      var ORBITS=[
+        {r:2.95,speed:.11,size:.82,tools:[["amazonaws","AWS","#FF9900"],["microsoftazure","Azure","#3B9CF0"],["docker","Docker","#2496ED"],["kubernetes","Kubernetes","#6A95F2"],["terraform","Terraform","#A47BE6"],["linux","Linux","#FCC624"]]},
+        {r:3.8,speed:-.065,size:.74,tools:[["jenkins","Jenkins","#E8735F"],["githubactions","GitHub Actions","#2F8FFF"],["git","Git","#F05032"],["github","GitHub","#F2F4F8"],["python","Python","#5A9AD6"],["helm","Helm","#8C96FF"],["nginx","Nginx","#2FB45A"],["splunk","Splunk","#F2F4F8"],["redhat","Red Hat","#F04848"],["ubuntu","Ubuntu","#E95420"]]}
+      ];
+
+      function canvas(w,h){var c=document.createElement("canvas");c.width=w;c.height=h;return c;}
+      function chip(slug,color){
+        var c=canvas(256,256),x=c.getContext("2d");
+        x.beginPath();x.arc(128,128,120,0,Math.PI*2);x.fillStyle="rgba(15,17,26,0.95)";x.fill();
+        x.lineWidth=5;x.strokeStyle="rgba(143,158,255,0.5)";x.stroke();
+        x.save();x.translate(74,74);x.scale(108/24,108/24);x.fillStyle=color;x.fill(new Path2D(ICONS[slug]));x.restore();
+        var t=new T.CanvasTexture(c);t.anisotropy=4;return t;
+      }
+      function planetTex(){
+        var c=canvas(1024,512),x=c.getContext("2d"),g=x.createLinearGradient(0,0,0,512);
+        [[0,"#2c3263"],[.16,"#1d2248"],[.28,"#3a4180"],[.4,"#1b1f40"],[.5,"#2e3570"],[.6,"#191d3a"],[.72,"#343b78"],[.86,"#1d2146"],[1,"#2a2f5e"]]
+          .forEach(function(s){g.addColorStop(s[0],s[1]);});
+        x.fillStyle=g;x.fillRect(0,0,1024,512);
+        for(var i=0;i<160;i++){x.fillStyle="rgba(175,186,255,"+(Math.random()*.06).toFixed(3)+")";x.fillRect(0,Math.random()*512,1024,1+Math.random()*5);}
+        return new T.CanvasTexture(c);
+      }
+      function ringTex(ri,ro){
+        var c=canvas(1024,1024),x=c.getContext("2d"),C=512,r0=ri/ro*C;
+        x.lineWidth=1.6;
+        for(var r=Math.floor(r0);r<C;r++){
+          var f=(r-r0)/(C-r0);
+          var a=(.2+.5*Math.pow(Math.sin(f*Math.PI),.6))*(.6+.4*Math.sin(f*41)*Math.sin(f*13));
+          if(f>.6&&f<.67)a*=.12;
+          x.beginPath();x.arc(C,C,r,0,Math.PI*2);x.strokeStyle="rgba(172,184,255,"+Math.max(0,a).toFixed(3)+")";x.stroke();
+        }
+        return new T.CanvasTexture(c);
+      }
+      function glowTex(){
+        var c=canvas(256,256),x=c.getContext("2d"),g=x.createRadialGradient(128,128,0,128,128,128);
+        g.addColorStop(0,"rgba(143,158,255,0.55)");g.addColorStop(.45,"rgba(143,158,255,0.12)");g.addColorStop(1,"rgba(143,158,255,0)");
+        x.fillStyle=g;x.fillRect(0,0,256,256);return new T.CanvasTexture(c);
+      }
+
+      var tilt=new T.Group();tilt.rotation.z=.3;scene.add(tilt);
+      var sys=new T.Group();sys.rotation.x=-1.18;tilt.add(sys);
+
+      var halo=new T.Sprite(new T.SpriteMaterial({map:glowTex(),transparent:true,depthWrite:false,blending:T.AdditiveBlending}));
+      halo.scale.set(6.2,6.2,1);scene.add(halo);
+
+      var planetSpin=new T.Group();sys.add(planetSpin);
+      var planet=new T.Mesh(new T.SphereGeometry(1.2,64,48),new T.MeshStandardMaterial({map:planetTex(),roughness:.85,metalness:.1}));
+      planet.rotation.x=Math.PI/2;planetSpin.add(planet);
+
+      var ring=new T.Mesh(new T.RingGeometry(1.55,2.5,160),new T.MeshBasicMaterial({map:ringTex(1.55,2.5),transparent:true,side:T.DoubleSide,depthWrite:false}));
+      sys.add(ring);
+
+      scene.add(new T.AmbientLight(0x5a6080,.55));
+      var key=new T.DirectionalLight(0xc9d1ff,1.7);key.position.set(5,4,6);scene.add(key);
+      var rim=new T.PointLight(0x5fd6c4,1.6,30);rim.position.set(-6,-2,2);scene.add(rim);
+
+      var nodes=[];
+      ORBITS.forEach(function(o,oi){
+        var pts=[];for(var k=0;k<=160;k++){var a=k/160*Math.PI*2;pts.push(new T.Vector3(Math.cos(a)*o.r,Math.sin(a)*o.r,0));}
+        sys.add(new T.Line(new T.BufferGeometry().setFromPoints(pts),new T.LineBasicMaterial({color:0x8f9eff,transparent:true,opacity:.16,depthWrite:false})));
+        o.tools.forEach(function(t,i){
+          var s=new T.Sprite(new T.SpriteMaterial({map:chip(t[0],t[2]),transparent:true,depthWrite:false}));
+          s.scale.set(o.size,o.size,1);s.userData={name:t[1],orbit:oi,base:i/o.tools.length*Math.PI*2};
+          sys.add(s);nodes.push(s);
+        });
+      });
+      var inner=nodes.filter(function(n){return n.userData.orbit===0;}),outer=nodes.filter(function(n){return n.userData.orbit===1;});
+
+      // links: ring of each orbit, inner-to-nearest-outer, inner-to-core
+      var segCount=inner.length+outer.length+inner.length;
+      var linkPos=new Float32Array(segCount*6),linkGeo=new T.BufferGeometry();
+      linkGeo.setAttribute("position",new T.BufferAttribute(linkPos,3));
+      sys.add(new T.LineSegments(linkGeo,new T.LineBasicMaterial({color:0x8f9eff,transparent:true,opacity:.38,depthWrite:false})));
+      var spokePos=new Float32Array(inner.length*6),spokeGeo=new T.BufferGeometry();
+      spokeGeo.setAttribute("position",new T.BufferAttribute(spokePos,3));
+      sys.add(new T.LineSegments(spokeGeo,new T.LineBasicMaterial({color:0x5fd6c4,transparent:true,opacity:.22,depthWrite:false})));
+      var pktPos=new Float32Array(inner.length*3),pktGeo=new T.BufferGeometry();
+      pktGeo.setAttribute("position",new T.BufferAttribute(pktPos,3));
+      sys.add(new T.Points(pktGeo,new T.PointsMaterial({color:0x5fd6c4,size:.09,transparent:true,depthWrite:false})));
+
+      var n=300,buf=new Float32Array(n*3);
+      for(var q=0;q<n;q++){var rr=6+Math.random()*6,th=Math.random()*Math.PI*2,ph=Math.acos(2*Math.random()-1);
+        buf[q*3]=rr*Math.sin(ph)*Math.cos(th);buf[q*3+1]=rr*Math.sin(ph)*Math.sin(th);buf[q*3+2]=rr*Math.cos(ph)-4;}
+      var dg=new T.BufferGeometry();dg.setAttribute("position",new T.BufferAttribute(buf,3));
+      var dust=new T.Points(dg,new T.PointsMaterial({color:0x868c9f,size:.03,transparent:true,opacity:.6}));
+      scene.add(dust);
+
+      function put(arr,i,a,b){arr[i]=a.x;arr[i+1]=a.y;arr[i+2]=a.z;arr[i+3]=b.x;arr[i+4]=b.y;arr[i+5]=b.z;}
+      var ZERO=new T.Vector3();
+      function update(s){
+        ORBITS.forEach(function(o,oi){
+          (oi===0?inner:outer).forEach(function(nd){var a=nd.userData.base+s*o.speed;nd.userData.a=a;nd.position.set(Math.cos(a)*o.r,Math.sin(a)*o.r,0);});
+        });
+        var p=0;
+        inner.forEach(function(nd,i){put(linkPos,p,nd.position,inner[(i+1)%inner.length].position);p+=6;});
+        outer.forEach(function(nd,i){put(linkPos,p,nd.position,outer[(i+1)%outer.length].position);p+=6;});
+        inner.forEach(function(nd,i){
+          var best=outer[0],bd=9;
+          outer.forEach(function(o){var d=Math.abs(Math.atan2(Math.sin(o.userData.a-nd.userData.a),Math.cos(o.userData.a-nd.userData.a)));if(d<bd){bd=d;best=o;}});
+          put(linkPos,p,nd.position,best.position);p+=6;
+          var f=(s*.35+i/inner.length)%1;
+          pktPos[i*3]=nd.position.x+(best.position.x-nd.position.x)*f;
+          pktPos[i*3+1]=nd.position.y+(best.position.y-nd.position.y)*f;
+          pktPos[i*3+2]=0;
+          put(spokePos,i*6,nd.position,ZERO);
+        });
+        linkGeo.attributes.position.needsUpdate=true;spokeGeo.attributes.position.needsUpdate=true;pktGeo.attributes.position.needsUpdate=true;
+        planetSpin.rotation.z=s*.08;dust.rotation.y=s*.015;
+      }
+
+      function size(){
+        var w=cv.clientWidth,h=cv.clientHeight;if(!w||!h)return;
+        R.setPixelRatio(Math.min(window.devicePixelRatio||1,2));R.setSize(w,h,false);
+        var tn=Math.tan(T.MathUtils.degToRad(18));
+        cam.aspect=w/h;cam.position.set(0,0,Math.max(3.2/tn,4.45/(tn*cam.aspect)));cam.updateProjectionMatrix();
+      }
+      size();
+
+      var tx=0,ty=0,cx=0,cy=0;
+      window.addEventListener("pointermove",function(e){tx=e.clientX/innerWidth-.5;ty=e.clientY/innerHeight-.5;});
+
+      function draw(t){
+        var s=t*.001;
+        cx+=(tx-cx)*.05;cy+=(ty-cy)*.05;
+        tilt.rotation.y=cx*.4;tilt.rotation.x=cy*.25;
+        update(s);R.render(scene,cam);
+      }
+      if(window.ResizeObserver)new ResizeObserver(function(){size();if(reduce)draw(0);}).observe(cv);else window.addEventListener("resize",size);
+
+      // tooltip with the tool's name on hover
+      var tip=document.getElementById("tip"),ray=new T.Raycaster(),mv=new T.Vector2();
+      cv.addEventListener("pointermove",function(e){
+        var r=cv.getBoundingClientRect();mv.set((e.clientX-r.left)/r.width*2-1,-(e.clientY-r.top)/r.height*2+1);
+        ray.setFromCamera(mv,cam);
+        var hit=ray.intersectObjects(nodes)[0];
+        if(hit){tip.textContent=hit.object.userData.name;tip.style.left=(e.clientX-r.left)+"px";tip.style.top=(e.clientY-r.top)+"px";tip.hidden=false;cv.style.cursor="default";}
+        else tip.hidden=true;
+      });
+      cv.addEventListener("pointerleave",function(){tip.hidden=true;});
+
+      document.getElementById("fallback").hidden=true;
+      if(reduce){draw(0);return;}
+      (function loop(t){if(!document.hidden)draw(t||0);requestAnimationFrame(loop);})();
+    }catch(err){ /* keep the CSS fallback */ }
+  })();
+})();
+</script>
+
+</body>
+</html>
