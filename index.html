@@ -145,6 +145,12 @@ section{padding-block:112px 0}
 
 /* Projects */
 .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.card.featured{grid-column:1/-1;border-color:rgba(143,158,255,.35)}
+.feat{display:inline-flex;align-items:center;gap:8px;font:500 11.5px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--live)}
+.feat::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--live)}
+.card-links{display:flex;flex-wrap:wrap;gap:10px 26px}
+.card.featured .card-top{flex-wrap:wrap;row-gap:12px}
+.feat{white-space:nowrap}
 .card{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:28px;display:grid;grid-template-columns:minmax(0,1fr);gap:18px;align-content:start;min-width:0;transition:transform .35s cubic-bezier(.2,.7,.2,1),border-color .3s;transform-style:preserve-3d;will-change:transform}
 .card::before{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(420px circle at var(--mx,50%) var(--my,0%),var(--accent-glow),transparent 60%);opacity:0;transition:opacity .3s;pointer-events:none}
 .card:hover{border-color:var(--line-2)}
@@ -459,6 +465,11 @@ section{padding-block:112px 0}
   var ROLES={all:["DevOps Engineer","Cloud Support Engineer","Security Engineer"],devops:["DevOps Engineer","DevSecOps"],cloud:["Cloud Support Engineer","CloudOps Engineer"],security:["Security Engineer","SOC / Detection"]};
 
   var P=[
+    {t:"Multi-Cloud Secure IaC Pipeline",r:["devops","cloud","security"],repo:"multicloud-secure-iac",featured:true,
+     d:"Every pull request must pass 7 required security gates (Terraform validate and TFLint, Checkov, Trivy, Gitleaks, ansible-lint, SonarQube Cloud) on a protected main branch. I hardened the pipeline's own supply chain with hash-locked, wheel-only tool installs, raising the SonarQube security rating from C to A, and deployed to Azure with Terraform state authenticated by Entra ID and no stored keys.",
+     flow:["Pull request","7 security gates","Quality Gate","Merge","Deploy"],
+     s:["Terraform","Ansible","GitHub Actions","Checkov","Trivy","SonarQube Cloud","Gitleaks","Azure","AWS"],
+     links:[{t:"Case study",u:"https://github.com/Subash-1507/multicloud-secure-iac/blob/main/docs/case-studies/01-ci-supply-chain-hardening.md"}]},
     {t:"Qwen LLM Chatbot on Kubernetes",r:["devops","cloud"],repo:"Qwen-Chatbot-Completed",
      d:"Two-tier chatbot (Flask frontend, Qwen2.5 backend) built into Docker images and deployed to Kubernetes with ClusterIP and NodePort services, resource limits and health probes. An HPA scales the backend from 1 to 3 replicas at 60% CPU.",
      s:["Docker","Kubernetes","HPA","Flask","Codespaces"]},
@@ -499,12 +510,12 @@ section{padding-block:112px 0}
   ];
   var S=[
     {h:"Cloud platforms",r:["cloud","devops"],v:["AWS","EC2","VPC","CloudWatch","CloudTrail","AWS Backup","Lambda","Azure","VM Scale Sets","VNet / NSG","AKS","Entra ID","Key Vault","Microsoft Fabric"]},
-    {h:"CI/CD & source control",r:["devops"],v:["Jenkins","GitHub Actions","Azure DevOps","Git","GitHub","Bitbucket","Webhooks"]},
+    {h:"CI/CD & source control",r:["devops"],v:["Jenkins","GitHub Actions","Azure DevOps","Git","GitHub","Bitbucket","Webhooks","pre-commit","Branch protection"]},
     {h:"Containers & orchestration",r:["devops","cloud"],v:["Docker","Docker Compose","Kubernetes","HPA","Helm","ACR"]},
     {h:"Infrastructure as code & scripting",r:["devops","cloud"],v:["Terraform","ARM templates","YAML","Python","SQL","KQL"]},
     {h:"Monitoring & logging",r:["cloud","security","devops"],v:["CloudWatch","CloudTrail","Splunk","Wazuh","Microsoft Sentinel","Log Analytics","Alerting"]},
     {h:"Cloud operations",r:["cloud"],v:["Incident troubleshooting","Root cause analysis","Backup & DR","Cost optimization","Patch management","SSL certificates"]},
-    {h:"Security",r:["security"],v:["Snort IDS","Nessus","OpenVAS","ModSecurity WAF","OWASP Top 10","Burp Suite","Wireshark","SonarCloud","SAST","IAM / RBAC"]},
+    {h:"Security",r:["security"],v:["Snort IDS","Nessus","OpenVAS","ModSecurity WAF","OWASP Top 10","Burp Suite","Wireshark","SonarQube Cloud","Checkov","Trivy","Gitleaks","SAST","IAM / RBAC","Supply-chain security"]},
     {h:"Linux & networking",r:["cloud","security","devops"],v:["Ubuntu","RHEL / SELinux","Kali","Nginx","Apache","TCP/IP","DNS","NAT","Subnetting"]}
   ];
   function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;");}
@@ -512,13 +523,14 @@ section{padding-block:112px 0}
 
   var grid=document.getElementById("grid");
   grid.innerHTML=P.map(function(p,i){
-    return '<article class="card tilt" data-r="'+p.r.join(" ")+'">'+
-      '<div class="card-top"><span class="idx">'+String(i+1).padStart(2,"0")+'</span><div class="rtags">'+p.r.map(function(r){return "<span>"+LABEL[r]+"</span>";}).join("")+'</div></div>'+
+    return '<article class="card tilt'+(p.featured?' featured':'')+'" data-r="'+p.r.join(" ")+'">'+
+      '<div class="card-top">'+(p.featured?'<span class="feat">Featured · Live on Azure</span>':'<span class="idx">'+String(i+1).padStart(2,"0")+'</span>')+'<div class="rtags">'+p.r.map(function(r){return "<span>"+LABEL[r]+"</span>";}).join("")+'</div></div>'+
       '<h3>'+esc(p.t)+'</h3>'+
       (p.flow?'<div class="flow">'+p.flow.map(function(f){return "<span>"+f+"</span>";}).join("<em>→</em>")+'</div>':'')+
       '<p>'+esc(p.d)+'</p>'+
       '<div class="stack">'+p.s.map(function(s){return "<span>"+esc(s)+"</span>";}).join("")+'</div>'+
-      '<a class="repo" href="'+GH+p.repo+'" target="_blank" rel="noopener"><span>'+esc(p.repo)+'</span>'+ARROW+'</a>'+
+      '<div class="card-links"><a class="repo" href="'+GH+p.repo+'" target="_blank" rel="noopener"><span>'+esc(p.repo)+'</span>'+ARROW+'</a>'+
+      (p.links?p.links.map(function(l){return '<a class="repo" href="'+l.u+'" target="_blank" rel="noopener"><span>'+esc(l.t)+'</span>'+ARROW+'</a>';}).join(""):"")+'</div>'+
     '</article>';
   }).join("");
 
