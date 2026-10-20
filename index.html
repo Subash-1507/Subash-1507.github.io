@@ -192,6 +192,12 @@ section{padding-block:112px 0}
 /* Education */
 .edu{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
 .edu .tile{min-height:0}
+.pub{display:grid;grid-template-columns:minmax(0,1fr);gap:12px;min-height:0}
+.pub h3{font-size:1.25rem;line-height:1.25}
+.pub .authors{color:var(--muted);font-size:14.5px}
+.pub .authors b{color:var(--ink);font-weight:500}
+.pub .venue{font:400 13px/1.5 var(--mono);color:var(--muted)}
+.pub p{max-width:80ch}
 .edu h3{font-size:1.3rem}
 
 /* Contact */
@@ -408,6 +414,19 @@ section{padding-block:112px 0}
       <p class="side">The role filter above also highlights the skill groups each role uses.</p>
     </div>
     <div class="skills" id="skillgrid"></div>
+  </section>
+
+  <section class="wrap" aria-labelledby="pub-h">
+    <div class="sh">
+      <div class="sh-l"><span class="label">Research</span><h2 id="pub-h">Publications</h2></div>
+    </div>
+    <article class="tile pub">
+      <span class="label">IEEE · Peer-reviewed conference paper · 2023</span>
+      <h3>Hardware Trojan Prevention using Logic Obfuscation</h3>
+      <p class="authors">N. Shiny Nishita, A. Janet Shamly, N. M. Sivamangai, R. Naveenkumar, J. Chella Marghi, <b>M. Subash Chandra Bose</b></p>
+      <p class="venue">2023 International Conference on Sustainable Computing and Smart Systems (ICSCSS), pp. 1466–1470 · DOI 10.1109/ICSCSS57650.2023.10169120</p>
+      <a class="repo" href="https://ieeexplore.ieee.org/document/10169120" target="_blank" rel="noopener"><span>Read on IEEE Xplore</span><svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 9L9 3M9 3H4M9 3V8" stroke="currentColor" stroke-width="1.4" fill="none"/></svg></a>
+    </article>
   </section>
 
   <section class="wrap" aria-labelledby="edu-h">
