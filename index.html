@@ -484,6 +484,11 @@ section{padding-block:112px 0}
   var ROLES={all:["DevOps Engineer","Cloud Support Engineer","Security Engineer"],devops:["DevOps Engineer","DevSecOps"],cloud:["Cloud Support Engineer","CloudOps Engineer"],security:["Security Engineer","SOC / Detection"]};
 
   var P=[
+    {t:"Zero-Trust Container Landing Zone on AKS",r:["devops","cloud","security"],repo:"azure-zero-trust-container-lz",featured:true,badge:"Featured · Break-fix tested on AKS",
+     d:"An AKS platform on Azure, built with Terraform, where the cluster itself refuses unsafe workloads. I hardened a 1.65 GB image with 3,493 CVEs into a distroless, non-root image with 0, enforced 7 Azure Policy deny guardrails, and gave the app keyless access to Key Vault and Table Storage through workload identity. Then I attacked it: a root pod from Docker Hub was denied on all 5 rules, and Defender for Containers raised a runtime alert 98 seconds after a suspicious process ran.",
+     flow:["Hardened image","Policy guardrails","Admission control","Runtime detection","Evidence"],
+     s:["AKS","Terraform","Azure Policy","Gatekeeper","Defender for Containers","Workload Identity","Key Vault","Calico","Trivy","Kustomize"],
+     links:[{t:"Break-fix results",u:"https://github.com/Subash-1507/azure-zero-trust-container-lz#chapter-6-results-what-actually-happened"}]},
     {t:"Multi-Cloud Secure IaC Pipeline",r:["devops","cloud","security"],repo:"multicloud-secure-iac",featured:true,
      d:"Every pull request must pass 7 required security gates (Terraform validate and TFLint, Checkov, Trivy, Gitleaks, ansible-lint, SonarQube Cloud) on a protected main branch. I hardened the pipeline's own supply chain with hash-locked, wheel-only tool installs, raising the SonarQube security rating from C to A, and deployed to Azure with Terraform state authenticated by Entra ID and no stored keys.",
      flow:["Pull request","7 security gates","Quality Gate","Merge","Deploy"],
@@ -528,22 +533,22 @@ section{padding-block:112px 0}
      s:["AWS Lambda","Python"]}
   ];
   var S=[
-    {h:"Cloud platforms",r:["cloud","devops"],v:["AWS","EC2","VPC","CloudWatch","CloudTrail","AWS Backup","Lambda","Azure","VM Scale Sets","VNet / NSG","AKS","Entra ID","Key Vault","Microsoft Fabric"]},
+    {h:"Cloud platforms",r:["cloud","devops"],v:["AWS","EC2","VPC","CloudWatch","CloudTrail","AWS Backup","Lambda","Azure","VM Scale Sets","VNet / NSG","AKS","Entra ID","Key Vault","Workload Identity","Microsoft Fabric"]},
     {h:"CI/CD & source control",r:["devops"],v:["Jenkins","GitHub Actions","Azure DevOps","Git","GitHub","Bitbucket","Webhooks","pre-commit","Branch protection"]},
-    {h:"Containers & orchestration",r:["devops","cloud"],v:["Docker","Docker Compose","Kubernetes","HPA","Helm","ACR"]},
+    {h:"Containers & orchestration",r:["devops","cloud"],v:["Docker","Docker Compose","Kubernetes","HPA","Helm","ACR","Kustomize","Distroless images","Network policies","Pod Security Admission"]},
     {h:"Infrastructure as code & scripting",r:["devops","cloud"],v:["Terraform","ARM templates","YAML","Python","SQL","KQL"]},
     {h:"Monitoring & logging",r:["cloud","security","devops"],v:["CloudWatch","CloudTrail","Splunk","Wazuh","Microsoft Sentinel","Log Analytics","Alerting"]},
     {h:"Cloud operations",r:["cloud"],v:["Incident troubleshooting","Root cause analysis","Backup & DR","Cost optimization","Patch management","SSL certificates"]},
-    {h:"Security",r:["security"],v:["Snort IDS","Nessus","OpenVAS","ModSecurity WAF","OWASP Top 10","Burp Suite","Wireshark","SonarQube Cloud","Checkov","Trivy","Gitleaks","SAST","IAM / RBAC","Supply-chain security"]},
+    {h:"Security",r:["security"],v:["Snort IDS","Nessus","OpenVAS","ModSecurity WAF","OWASP Top 10","Burp Suite","Wireshark","SonarQube Cloud","Checkov","Trivy","Gitleaks","Syft SBOM","Azure Policy / Gatekeeper","Defender for Containers","SAST","IAM / RBAC","Supply-chain security"]},
     {h:"Linux & networking",r:["cloud","security","devops"],v:["Ubuntu","RHEL / SELinux","Kali","Nginx","Apache","TCP/IP","DNS","NAT","Subnetting"]}
   ];
   function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;");}
   var ARROW='<svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 9L9 3M9 3H4M9 3V8" stroke="currentColor" stroke-width="1.4" fill="none"/></svg>';
 
-  var grid=document.getElementById("grid");
+  var grid=document.getElementById("grid"),n=0;
   grid.innerHTML=P.map(function(p,i){
     return '<article class="card tilt'+(p.featured?' featured':'')+'" data-r="'+p.r.join(" ")+'">'+
-      '<div class="card-top">'+(p.featured?'<span class="feat">Featured · Live on Azure</span>':'<span class="idx">'+String(i+1).padStart(2,"0")+'</span>')+'<div class="rtags">'+p.r.map(function(r){return "<span>"+LABEL[r]+"</span>";}).join("")+'</div></div>'+
+      '<div class="card-top">'+(p.featured?'<span class="feat">'+(p.badge||"Featured · Live on Azure")+'</span>':'<span class="idx">'+String(++n).padStart(2,"0")+'</span>')+'<div class="rtags">'+p.r.map(function(r){return "<span>"+LABEL[r]+"</span>";}).join("")+'</div></div>'+
       '<h3>'+esc(p.t)+'</h3>'+
       (p.flow?'<div class="flow">'+p.flow.map(function(f){return "<span>"+f+"</span>";}).join("<em>→</em>")+'</div>':'')+
       '<p>'+esc(p.d)+'</p>'+
