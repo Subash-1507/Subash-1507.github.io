@@ -484,11 +484,11 @@ section{padding-block:112px 0}
   var ROLES={all:["DevOps Engineer","Cloud Support Engineer","Security Engineer"],devops:["DevOps Engineer","DevSecOps"],cloud:["Cloud Support Engineer","CloudOps Engineer"],security:["Security Engineer","SOC / Detection"]};
 
   var P=[
-    {t:"Zero-Trust Container Landing Zone on AKS",r:["devops","cloud","security"],repo:"azure-zero-trust-container-lz",featured:true,badge:"Featured · Break-fix tested on AKS",
-     d:"An AKS platform on Azure, built with Terraform, where the cluster itself refuses unsafe workloads. I hardened a 1.65 GB image with 3,493 CVEs into a distroless, non-root image with 0, enforced 7 Azure Policy deny guardrails, and gave the app keyless access to Key Vault and Table Storage through workload identity. Then I attacked it: a root pod from Docker Hub was denied on all 5 rules, and Defender for Containers raised a runtime alert 98 seconds after a suspicious process ran.",
-     flow:["Hardened image","Policy guardrails","Admission control","Runtime detection","Evidence"],
+    {t:"Zero-Trust Container Landing Zone on AKS",r:["devops","cloud","security"],repo:"azure-zero-trust-container-lz",featured:true,badge:"Featured · Built, attacked, torn down",
+     d:"An AKS platform on Azure, built with Terraform, where the cluster itself refuses unsafe workloads. I hardened a 1.65 GB image with 3,493 CVEs into a non-root image with 0, enforced 7 Azure Policy deny guardrails, and gave the app keyless access to Key Vault and Table Storage through workload identity. Then I attacked it: a root pod from Docker Hub was denied on all 5 rules, and Defender for Containers raised a runtime alert 98 seconds after a suspicious process ran. Finally I mapped all 23 NIST SP 800-190 container risks to evidence and tore everything down; the whole build cost about $3.",
+     flow:["Hardened image","Policy guardrails","Admission control","Runtime detection","NIST 800-190 mapping"],
      s:["AKS","Terraform","Azure Policy","Gatekeeper","Defender for Containers","Workload Identity","Key Vault","Calico","Trivy","Kustomize"],
-     links:[{t:"Break-fix results",u:"https://github.com/Subash-1507/azure-zero-trust-container-lz#chapter-6-results-what-actually-happened"}]},
+     links:[{t:"Break-fix results",u:"https://github.com/Subash-1507/azure-zero-trust-container-lz#chapter-6-results-what-actually-happened"},{t:"NIST 800-190 mapping",u:"https://github.com/Subash-1507/azure-zero-trust-container-lz/blob/main/docs/compliance/nist-800-190-cis-mapping.md"}]},
     {t:"Multi-Cloud Secure IaC Pipeline",r:["devops","cloud","security"],repo:"multicloud-secure-iac",featured:true,
      d:"Every pull request must pass 7 required security gates (Terraform validate and TFLint, Checkov, Trivy, Gitleaks, ansible-lint, SonarQube Cloud) on a protected main branch. I hardened the pipeline's own supply chain with hash-locked, wheel-only tool installs, raising the SonarQube security rating from C to A, and deployed to Azure with Terraform state authenticated by Entra ID and no stored keys.",
      flow:["Pull request","7 security gates","Quality Gate","Merge","Deploy"],
